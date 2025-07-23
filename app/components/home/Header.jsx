@@ -10,7 +10,7 @@ const Header = () => {
   const slides = [
     {
       id: 1,
-      bgImage: "/home/pet (1).jpg",
+      bgImage: "/home/pet.jpg",
       title: "Professional Grooming Services",
       description: "Pamper your pets with our premium grooming treatments",
       cta: "Book Now",
@@ -18,7 +18,7 @@ const Header = () => {
     },
     {
       id: 2,
-      bgImage: "/home/pet (2).jpg",
+      bgImage: "/home/pet (3).jpg",
       title: "Luxury Pet Boarding",
       description: "Safe and comfortable stays for your furry friends",
       cta: "Learn More",
@@ -26,7 +26,7 @@ const Header = () => {
     },
     {
       id: 3,
-      bgImage: "/home/pet (5).jpg",
+      bgImage: "/home/pet (4).jpg",
       title: "Expert Veterinary Care",
       description: "Compassionate healthcare for your beloved pets",
       cta: "Schedule Visit",
@@ -54,7 +54,7 @@ const Header = () => {
   return (
     <>
       <header
-        className="relative h-screen w-full overflow-hidden"
+        className="relative h-[80vh] w-full overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

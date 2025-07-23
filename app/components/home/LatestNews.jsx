@@ -16,7 +16,7 @@ const LatestNews = () => {
     },
     {
       id: 2,
-      image: "/home/news.jpg",
+      image: "/home/news (3).jpg",
       title: "The Ultimate Guide to Pet Nutrition in 2023",
       excerpt:
         "Discover the latest research on pet nutrition and how to choose the best diet for your furry friend's specific needs.",
@@ -26,7 +26,7 @@ const LatestNews = () => {
     },
     {
       id: 3,
-      image: "/home/news.jpg",
+      image: "/home/news (1).jpg",
       title: "New Techniques for Training Anxious Pets",
       excerpt:
         "Innovative methods to help your anxious pet feel more comfortable and behave better in stressful situations.",
