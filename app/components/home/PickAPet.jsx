@@ -46,7 +46,7 @@ const PickAPet = () => {
 
   return (
     <section
-      className="relative py-20 px-4 bg-cover bg-center bg-no-repeat"
+      className="relative py-10 px-4 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/home/wasps.jpg')" }}
     >
       {/* Overlay */}
