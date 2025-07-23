@@ -1,69 +1,289 @@
-import React from 'react'
+"use client";
+import { useState } from "react";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaw, FaClock } from "react-icons/fa";
 
 const Contact_Form = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    petType: "",
+    message: "",
+  });
+
+  const petOptions = [
+    { value: "", label: "Select pet type" },
+    { value: "dog", label: "Dog" },
+    { value: "cat", label: "Cat" },
+    { value: "bird", label: "Bird" },
+    { value: "rabbit", label: "Rabbit" },
+    { value: "other", label: "Other" },
+  ];
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    alert("Thank you for your message! We'll contact you soon.");
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      petType: "",
+      message: "",
+    });
+  };
+
   return (
-    <section className="flex flex-col lg:flex-row items-center gap-8 mb-16">
-              <div className="lg:w-1/2 order-2 lg:order-1">
-                <img 
-                  src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1280&q=80" 
-                  alt="Bird care"
-                  className="w-full h-auto rounded-lg"
-                />
+    <section id="contact" className="py-16 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="container mx-auto max-w-6xl">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          {/* Left Side - Contact Info */}
+          <div className="lg:w-1/2">
+            <div className="mb-10">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">Touch</span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Have questions about our services or need to schedule an
+                appointment? Our team is ready to assist you and your pet with
+                any inquiries.
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              <div className="flex items-start gap-5 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="p-3 rounded-lg text-green-600 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300 bg-green-100 my-auto">
+                  <FaPhone className="text-xl hover:scale-110 transition-transform duration-200" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-1">
+                    Call Us
+                  </h3>
+                  <p className="text-gray-600">+1 (555) 123-4567</p>
+                  <p className="text-gray-600 text-sm">(Emergency: +1 (555) 987-6543)</p>
+                </div>
               </div>
-              <div className="lg:w-1/2 order-1 lg:order-2">
-                <h2 className="text-3xl font-semibold text-green-700 mb-6">Send Us a Message</h2>
-                <form className="space-y-4">
+
+              <div className="flex items-start gap-5 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="p-3 text-green-600 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300 bg-green-100 rounded-lg my-auto">
+                  <FaEnvelope className="text-xl hover:scale-110 transition-transform duration-200" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-1">
+                    Email Us
+                  </h3>
+                  <p className="text-gray-600">info@petservice.com</p>
+                  <p className="text-gray-600 text-sm">support@petservice.com</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-5 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="p-3 text-green-600 group-hover:bg-green-600 group-hover:text-white transition-all duration-300 bg-green-100 rounded-lg my-auto">
+  <FaMapMarkerAlt className="text-xl hover:scale-110 transition-transform duration-200" />
+</div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-1">
+                    Visit Us
+                  </h3>
+                  <p className="text-gray-600">123 Pet Care Avenue</p>
+                  <p className="text-gray-600">New York, NY 10001</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-10 p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 text-green-600 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300 bg-green-100 rounded-lg">
+                  <FaClock className="text-lg hover:scale-110 transition-transform duration-200" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800">
+                  Business Hours
+                </h3>
+              </div>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex justify-between py-2 border-b border-gray-100">
+                  <span className="font-medium">Monday - Friday</span>
+                  <span>8:00 AM - 8:00 PM</span>
+                </li>
+                <li className="flex justify-between py-2 border-b border-gray-100">
+                  <span className="font-medium">Saturday</span>
+                  <span>9:00 AM - 6:00 PM</span>
+                </li>
+                <li className="flex justify-between py-2 border-b border-gray-100">
+                  <span className="font-medium">Sunday</span>
+                  <span>10:00 AM - 4:00 PM</span>
+                </li>
+                <li className="flex justify-between py-2 text-green-500 font-semibold">
+                  <span>Emergency Service</span>
+                  <span>24/7 Available</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Right Side - Contact Form */}
+          <div className="lg:w-1/2">
+            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+              <h3 className="text-2xl font-bold text-green-500 mb-2">
+                Send Us a  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">Message</span>
+              </h3>
+              <p className="text-gray-500 mb-6">We'll get back to you within 24 hours</p>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    Your Name <span className="text-indigo-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition-all duration-200 placeholder-gray-400"
+                    placeholder="John Doe"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
-                    <label htmlFor="name" className="block text-gray-700 mb-2">Your Name</label>
-                    <input 
-                      type="text" 
-                      id="name" 
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-gray-700 mb-2">Email Address</label>
-                    <input 
-                      type="email" 
-                      id="email" 
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Email <span className="text-indigo-600">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition-all duration-200 placeholder-gray-400"
                       placeholder="your@email.com"
                     />
                   </div>
+
                   <div>
-                    <label htmlFor="bird-type" className="block text-gray-700 mb-2">Bird Type (Optional)</label>
-                    <select 
-                      id="bird-type" 
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      <option value="">Select bird type</option>
-                      <option value="parrot">Parrot</option>
-                      <option value="canary">Canary</option>
-                      <option value="finch">Finch</option>
-                      <option value="cockatiel">Cockatiel</option>
-                      <option value="other">Other</option>
-                    </select>
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition-all duration-200 placeholder-gray-400"
+                      placeholder="(123) 456-7890"
+                    />
                   </div>
-                  <div>
-                    <label htmlFor="message" className="block text-gray-700 mb-2">Your Message</label>
-                    <textarea 
-                      id="message" 
-                      rows="4"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                      placeholder="Tell us about your bird care questions..."
-                    ></textarea>
-                  </div>
-                  <button 
-                    type="submit"
-                    className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300 w-full"
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="address"
+                    className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Send Message
-                  </button>
-                </form>
-              </div>
-            </section>
-  )
-}
+                    Address
+                  </label>
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    value={formData.address}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition-all duration-200 placeholder-gray-400"
+                    placeholder="123 Main St"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="petType"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    Pet Type
+                  </label>
+                  <div className="relative">
+                    <select
+                      id="petType"
+                      name="petType"
+                      value={formData.petType}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition-all duration-200 appearance-none bg-white text-gray-700"
+                    >
+                      {petOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                      <FaPaw className="h-5 w-5 text-gray-400" />
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    Your Message <span className="text-indigo-600">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition-all duration-200 placeholder-gray-400"
+                    placeholder="Tell us about your pet's needs..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full px-6 py-3.5 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl shadow-lg hover:shadow-xl hover:bg-green-500 transition-all duration-300 font-semibold flex items-center justify-center gap-2"
+                >
+                  Send Message
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                  </svg>
+                </button>
+              </form>
+            </div>
+
+            <div className="mt-6 p-4 bg-indigo-50 rounded-lg border border-indigo-100 text-center">
+              <p className="text-sm text-gray-800">
+                <span className="font-medium text-green-600">Quick response:</span> We typically respond within 24 hours during business days.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Contact_Form;

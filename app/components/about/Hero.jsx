@@ -4,15 +4,7 @@ const Hero = () => {
   return (
     <div className="min-h-screen ">
       <main className="container mx-auto px-4 py-12 max-w-7xl">
-        {/* Animated Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600 mb-4">
-            Feathered Friends Care
-          </h1>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-green-400 to-blue-400 mx-auto rounded-full"></div>
-        </div>
-        
-        {/* Hero Section */}
+         {/* Hero Section */}
         <section className="flex flex-col lg:flex-row items-center gap-12 mb-16">
           <div className="lg:w-1/2 order-2 lg:order-1">
             <div className="relative">
