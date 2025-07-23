@@ -37,19 +37,19 @@ const Contact_Faq = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-green-50 to-blue-50 py-20 px-4">
+    <div className="bg-gradient-to-br from-green-100 to-blue-50 py-20 px-4">
       <section className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center bg-green-100 rounded-full px-4 py-2 mb-4">
-            <FaFeatherAlt className="text-green-600 mr-2" />
-            <span className="text-sm font-semibold text-green-600 uppercase tracking-wider">
+            <FaFeatherAlt className="text-[#7BAE4B] mr-2" />
+            <span className="text-sm font-semibold text-[#7BAE4B] uppercase tracking-wider">
               Avian Care FAQs
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">Questions</span>
+            Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-[#7BAE4B]">Questions</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-blue-400 mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-[#7BAE4B] mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Quick answers to common questions about bird care and our services
           </p>
@@ -65,7 +65,7 @@ const Contact_Faq = () => {
                 className={`flex w-full items-center justify-between p-6 text-left focus:outline-none transition-colors ${activeIndex === index ? 'bg-green-50' : 'hover:bg-green-50'}`}
                 onClick={() => toggleAccordion(index)}
               >
-                <h3 className="text-lg md:text-xl font-semibold text-gray-800 pr-4">
+                <h3 className="text-lg md:text-xl font-semibold text-green-600 pr-4">
                   {faq.question}
                 </h3>
                 <svg 

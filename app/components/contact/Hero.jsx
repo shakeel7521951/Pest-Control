@@ -1,60 +1,53 @@
-export default function Hero() {
+import React from 'react';
+
+const Hero = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 flex items-center relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-green-200 rounded-full filter blur-3xl opacity-20 -z-10"></div>
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-200 rounded-full filter blur-3xl opacity-20 -z-10"></div>
-      
-      <section className="container mx-auto px-4 py-12 md:py-24">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          <div className="lg:w-1/2 space-y-8">
-            <div>
-              <span className="inline-block px-4 py-2 text-sm font-semibold text-green-600 bg-green-100 rounded-full mb-4">
-                GET IN TOUCH
-              </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-6">
-                Contact Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">Avian Experts</span>
-              </h1>
-              <p className="text-lg text-gray-600  max-w-2xl">
-                Have questions about bird care, nutrition, or safety? Our team of specialists is here to help you 
-                provide the best care for your feathered friends.
-              </p>
-            </div>
-            
-            <div className="flex flex-wrap gap-4 pt-2">
-              <button className="relative overflow-hidden group px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <span className="relative z-10 flex items-center gap-2">
-                  Emergency Contact gggggg
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                  </svg>
-                </span>
-                <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition duration-500"></span>
-              </button>
-              
-              <button className="px-8 py-4 bg-white text-green-600 font-semibold rounded-xl border-2 border-green-600 shadow-sm hover:bg-green-50 hover:shadow-md transition-all duration-300 flex items-center gap-2">
-                General Inquiry
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
-                </svg>
-              </button>
+    <div className="relative min-h-screen">
+      {/* Background Image with opacity via overlay */}
+      <div className="absolute inset-0">
+        <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1551085254-e96b210db58a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1280&q=80')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-black opacity-40" />
+      </div>
+
+      {/* Main Content */}
+      <main className="relative z-10 container mx-auto px-4 py-12 max-w-7xl">
+        {/* Hero Section */}
+        <section className="flex flex-col items-center justify-center min-h-[80vh]">
+          <div className="w-full lg:w-2/2">
+            <div className="relative">
+              <div className="absolute bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+
+              {/* Main Section */}
+              <div className="p-34">
+                <h2 className="text-4xl font-bold text-white mb-6 text-center">
+                  Our<span className="text-[#7BAE4B]"> Passion </span> for Avian Welfare
+                </h2>
+                <p className="text-xl text-gray-100 mb-8 leading-relaxed text-center">
+                  Founded in 2010, Feathered Friends Care is dedicated to improving the lives of birds 
+                  through proper care, nutrition, and habitat preservation. Our team of experts works 
+                  tirelessly to ensure every bird gets the love and attention they deserve.
+                </p>
+                <div className="flex flex-wrap gap-4 justify-center text-center align-center">
+                  <button className="px-5 py-3 bg-gradient-to-r from-green-500 to-[#7BAE4B] text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform">
+                    Learn More
+                  </button>
+                  <button className="px-5 py-3 bg-white text-[#7BAE4B] font-medium rounded-full border-2 border-[#7BAE4B] shadow-md hover:bg-green-50 transition-all duration-300">
+                    Contact Us
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-          
-          <div className="lg:w-1/2 relative">
-            <div className="relative group h-full w-full rounded-2xl overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 z-10"></div>
-              <img 
-                src="YOUR_NEW_IMAGE_URL_HERE" 
-                alt="Background image"
-                className="w-full h-full object-cover transform transition duration-700 group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-yellow-100 rounded-full filter blur-xl opacity-40 z-0 hidden lg:block"></div>
-          </div>
+        </section>
+
+        {/* Decorative Elements */}
+        <div className="hidden lg:block">
+          <div className="absolute top-0 left-0 w-32 h-32 bg-green-200 rounded-full filter blur-3xl opacity-30"></div>
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-200 rounded-full filter blur-3xl opacity-20"></div>
         </div>
-      </section>
+      </main>
     </div>
   );
-}
+};
+
+export default Hero;
