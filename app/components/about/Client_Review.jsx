@@ -123,13 +123,13 @@ const Client_Review = () => {
     <div className="bg-gradient-to-br from-gray-50 to-blue-50 py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 text-sm font-semibold text-blue-600 bg-blue-100 rounded-full mb-4">
+          <span className="inline-block px-4 py-2 text-sm font-semibold bg-[#7BAE4B] text-white rounded-full mb-4">
             TESTIMONIALS
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">Clients Say</span>
+            What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-[#7BAE4B]">Clients Say</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-6 rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-[#7BAE4B] mx-auto mb-6 rounded-full"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Don't just take our word for it - hear from our satisfied customers
           </p>
@@ -142,7 +142,7 @@ const Client_Review = () => {
               prevSlide();
               resetAutoSlide();
             }}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 md:-ml-8 z-10 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-700 hover:text-white hover:bg-gradient-to-r from-blue-500 to-indigo-600 transition-all duration-300 group"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 md:-ml-8 z-10 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-700 hover:text-white hover:bg-gradient-to-r from-green-500 to-[#7BAE4B] transition-all duration-300 group"
           >
             <FaChevronLeft className="text-xl group-hover:scale-110 transition-transform" />
           </button>
@@ -151,7 +151,7 @@ const Client_Review = () => {
               nextSlide();
               resetAutoSlide();
             }}
-            className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 md:-mr-8 z-10 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-700 hover:text-white hover:bg-gradient-to-r from-blue-500 to-indigo-600 transition-all duration-300 group"
+            className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 md:-mr-8 z-10 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-700 hover:text-white hover:bg-gradient-to-r from-green-500 to-[#7BAE4B] transition-all duration-300 group"
           >
             <FaChevronRight className="text-xl group-hover:scale-110 transition-transform" />
           </button>
@@ -184,7 +184,7 @@ const Client_Review = () => {
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-14 h-14 rounded-full object-cover mr-4 border-2 border-blue-100 group-hover:border-blue-300 transition-colors duration-300"
+                          className="w-14 h-14 rounded-full object-cover mr-4 border-2 border-green-300 group-hover:border-green-400 transition-colors duration-300"
                         />
                         <div>
                           <h4 className="font-semibold text-gray-800">{testimonial.name}</h4>
@@ -205,7 +205,7 @@ const Client_Review = () => {
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? 'bg-gradient-to-r from-blue-500 to-indigo-600 w-8' : 'bg-gray-300'
+                  index === currentIndex ? 'bg-gradient-to-r from-green-500 to-green-600 w-8' : 'bg-green-300'
                 }`}
               />
             ))}

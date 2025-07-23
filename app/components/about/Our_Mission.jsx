@@ -1,6 +1,6 @@
 const Our_Mission = () => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden p-14 ">
       {/* Decorative background elements */}
       <div className="absolute -top-32 -left-32 w-64 h-64 bg-green-100 rounded-full filter blur-3xl opacity-30"></div>
       <div className="absolute -bottom-32 -right-32 w-64 h-64 bg-blue-100 rounded-full filter blur-3xl opacity-20"></div>
@@ -26,7 +26,7 @@ const Our_Mission = () => {
           <div className="lg:w-1/2 order-1 lg:order-2">
             <div className="relative">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500">Mission</span>
+                Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-[#7BAE4B]">Mission</span>
               </h2>
               
               <p className="text-gray-600 mb-6 leading-relaxed">
@@ -45,7 +45,7 @@ const Our_Mission = () => {
                   <li key={index} className="flex items-start group">
                     <div className="flex-shrink-0 mt-1 mr-3">
                       <div className="flex items-center justify-center w-5 h-5 bg-green-100 rounded-full group-hover:bg-green-500 transition duration-300">
-                        <svg className="w-3 h-3 text-green-500 group-hover:text-white transition duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-3 h-3 text-[#7BAE4B] group-hover:text-white transition duration-300" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </div>
@@ -56,10 +56,10 @@ const Our_Mission = () => {
               </ul>
               
               <div className="flex flex-wrap gap-3">
-                <button className="px-5 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white font-medium rounded-full shadow hover:shadow-md transition-all duration-300 hover:scale-[1.02] transform text-sm">
+                <button className="px-5 py-2.5 bg-gradient-to-r from-green-500 to-[#7BAE4B] text-white font-medium rounded-full shadow hover:shadow-md transition-all duration-300 hover:scale-[1.02] transform text-sm">
                   Join Our Cause
                 </button>
-                <button className="px-5 py-2.5 bg-white text-green-600 font-medium rounded-full border border-green-500 shadow-sm hover:bg-green-50 transition-all duration-300 text-sm">
+                <button className="px-5 py-2.5 bg-white text-[#7BAE4B] font-medium rounded-full border border-[#7BAE4B] shadow-sm hover:bg-green-50 transition-all duration-300 text-sm">
                   Donate Now
                 </button>
               </div>

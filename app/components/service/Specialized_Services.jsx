@@ -8,8 +8,8 @@ import {
 
 const Specialized_Services = () => {
   return (
-    <section className="bg-green-50 rounded-xl p-8 mb-16">
-      <h2 className="text-3xl font-semibold text-green-700 mb-8 text-center">Specialized Services</h2>
+    <section className="bg-green-100 rounded-xl  mb-20 p-10">
+      <h2 className="text-3xl font-semibold text-[#7BAE4B] mb-8 text-center">Specialized Services</h2>
       
       <div className="grid md:grid-cols-2 gap-8">
         {/* Health Assessments */}
@@ -24,8 +24,8 @@ const Specialized_Services = () => {
           </div>
           <div className="md:w-2/3">
             <div className="flex items-center gap-3 mb-3">
-              <FaClipboardCheck className="text-green-600 text-2xl" />
-              <h3 className="text-xl font-semibold text-green-700">Health Assessments</h3>
+              <FaClipboardCheck className="text-[#7BAE4B] text-2xl" />
+              <h3 className="text-xl font-semibold text-[#7BAE4B]">Health Assessments</h3>
             </div>
             <p className="text-gray-700 mb-4">
               Comprehensive physical exams, blood work analysis, and diagnostic testing to monitor your bird's health 
@@ -33,15 +33,15 @@ const Specialized_Services = () => {
             </p>
             <ul className="space-y-2 text-gray-600">
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">•</span>
+                <span className="text-[#7BAE4B] mr-2">•</span>
                 <span>Annual wellness exams</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">•</span>
+                <span className="text-[#7BAE4B] mr-2">•</span>
                 <span>Pre-purchase examinations</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">•</span>
+                <span className="text-[#7BAE4B] mr-2">•</span>
                 <span>Geriatric care programs</span>
               </li>
             </ul>
@@ -60,8 +60,8 @@ const Specialized_Services = () => {
           </div>
           <div className="md:w-2/3">
             <div className="flex items-center gap-3 mb-3">
-              <FaBook className="text-green-600 text-2xl" />
-              <h3 className="text-xl font-semibold text-green-700">Behavioral Training</h3>
+              <FaBook className="text-[#7BAE4B] text-2xl" />
+              <h3 className="text-xl font-semibold text-[#7BAE4B]">Behavioral Training</h3>
             </div>
             <p className="text-gray-700 mb-4">
               Positive reinforcement training to address behavioral issues, improve socialization, 
@@ -69,15 +69,15 @@ const Specialized_Services = () => {
             </p>
             <ul className="space-y-2 text-gray-600">
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">•</span>
+                <span className="text-[#7BAE4B] mr-2">•</span>
                 <span>Step-up training</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">•</span>
+                <span className="text-[#7BAE4B] mr-2">•</span>
                 <span>Biting prevention</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">•</span>
+                <span className="text-[#7BAE4B] mr-2">•</span>
                 <span>Vocalization management</span>
               </li>
             </ul>
@@ -96,8 +96,8 @@ const Specialized_Services = () => {
           </div>
           <div className="md:w-2/3">
             <div className="flex items-center gap-3 mb-3">
-              <FaUserMd className="text-green-600 text-2xl" />
-              <h3 className="text-xl font-semibold text-green-700">Medical Services</h3>
+              <FaUserMd className="text-[#7BAE4B] text-2xl" />
+              <h3 className="text-xl font-semibold text-[#7BAE4B]">Medical Services</h3>
             </div>
             <p className="text-gray-700 mb-4">
               Specialized avian veterinary care including diagnostics, treatment plans, 
@@ -105,15 +105,15 @@ const Specialized_Services = () => {
             </p>
             <ul className="space-y-2 text-gray-600">
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">•</span>
+                <span className="text-[#7BAE4B] mr-2">•</span>
                 <span>Diagnostic imaging</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">•</span>
+                <span className="text-[#7BAE4B] mr-2">•</span>
                 <span>Microchipping</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">•</span>
+                <span className="text-[#7BAE4B] mr-2">•</span>
                 <span>Specialized surgeries</span>
               </li>
             </ul>
@@ -132,8 +132,8 @@ const Specialized_Services = () => {
           </div>
           <div className="md:w-2/3">
             <div className="flex items-center gap-3 mb-3">
-              <FaHandsHelping className="text-green-600 text-2xl" />
-              <h3 className="text-xl font-semibold text-green-700">Boarding & Grooming</h3>
+              <FaHandsHelping className="text-[#7BAE4B] text-2xl" />
+              <h3 className="text-xl font-semibold text-[#7BAE4B]">Boarding & Grooming</h3>
             </div>
             <p className="text-gray-700 mb-4">
               Safe, comfortable boarding facilities with avian-specialized staff and professional 
@@ -141,15 +141,15 @@ const Specialized_Services = () => {
             </p>
             <ul className="space-y-2 text-gray-600">
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">•</span>
+                <span className="text-[#7BAE4B] mr-2">•</span>
                 <span>Short-term boarding</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">•</span>
+                <span className="text-[#7BAE4B] mr-2">•</span>
                 <span>Wing clipping</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">•</span>
+                <span className="text-[#7BAE4B] mr-2">•</span>
                 <span>Medicated bathing</span>
               </li>
             </ul>

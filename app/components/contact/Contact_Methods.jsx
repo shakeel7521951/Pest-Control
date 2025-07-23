@@ -22,7 +22,7 @@ const Contact_Methods = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-        {/* Phone Support */}
+      
         <div className="group relative bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-all duration-500 hover:-translate-y-2 border border-gray-100">
           <div className="absolute top-6 right-6 w-14 h-14 bg-green-100 rounded-full flex items-center justify-center text-green-600 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300">
             <FaPhone className="text-2xl" aria-hidden="true" />
@@ -30,7 +30,7 @@ const Contact_Methods = () => {
           <h3 className="text-xl font-bold text-gray-800 mb-4">Phone Support</h3>
           <a 
             href="tel:+18005551234" 
-            className="text-lg text-green-600 hover:text-green-800 font-medium block mb-3 transition-colors flex items-center gap-2"
+            className="text-lg text-green-600 hover:text-green-800 font-medium mb-3 transition-colors flex items-center gap-2"
             aria-label="Call us at 1-800-555-1234"
           >
             +1 (800) 555-1234 <FaArrowRight className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -49,7 +49,7 @@ const Contact_Methods = () => {
           <h3 className="text-xl font-bold text-gray-800 mb-4">Email Us</h3>
           <a 
             href="mailto:support@aviancarehub.com" 
-            className="text-lg text-green-600 hover:text-green-800 font-medium block mb-3 transition-colors break-words flex items-center gap-2"
+            className="text-lg text-green-600 hover:text-green-800 font-medium  mb-3 transition-colors break-words flex items-center gap-2"
             aria-label="Email us at support@aviancarehub.com"
           >
             support@aviancarehub.com <FaArrowRight className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

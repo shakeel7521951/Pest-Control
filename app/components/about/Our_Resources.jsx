@@ -47,16 +47,16 @@ const Our_Resources = () => {
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 z-20">
                 <h3 className="text-xl font-bold text-white">Expert-Curated Content</h3>
-                <p className="text-green-200 text-sm">All resources vetted by our team of specialists</p>
+                <p className="text-green-400 text-sm">All resources vetted by our team of specialists</p>
               </div>
             </div>
           </div>
 
           {/* Content Section */}
           <div className="lg:w-1/2 order-1 lg:order-2">
-            <div className="mb-2 text-sm font-semibold text-green-600 uppercase tracking-wider">Learning Center</div>
+            <div className="mb-2 text-sm font-semibold text-[#7BAE4B] uppercase tracking-wider">Learning Center</div>
             <h2 className="text-4xl font-bold text-gray-800 mb-6">
-              Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500">Resources</span>
+              Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-[#7BAE4B]">Resources</span>
             </h2>
             <p className="text-lg text-gray-600 mb-10 leading-relaxed">
               We provide detailed guides on all aspects of bird care to help you become the best bird caretaker possible. 
