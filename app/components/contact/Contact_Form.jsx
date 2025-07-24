@@ -44,73 +44,73 @@ const Contact_Form = () => {
   };
 
   return (
-    <section id="contact" className="py-16 px-4 bg-[#f9f9f9]">
+    <section id="contact" className="py-12 px-4 sm:px-6 bg-[#f9f9f9]">
       <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12">
           {/* Left Side - Contact Info */}
           <div className="lg:w-1/2">
-            <div className="mb-10">
-              <h2 className="text-4xl md:text-5xl font-bold text-[#1E2A38] mb-4">
+            <div className="mb-8 md:mb-10">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1E2A38] mb-3 md:mb-4">
                 Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-[#7BAE4B]">Touch</span>
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                 Have questions about our services or need to schedule an
                 appointment? Our team is ready to assist you and your pet with
                 any inquiries.
               </p>
             </div>
 
-            <div className="space-y-8">
-              <div className="flex items-start gap-5 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="p-3 rounded-lg text-[#7BAE4B] group-hover:bg-green-600 group-hover:text-white transition-colors duration-300 bg-green-100 my-auto">
-                  <FaPhone className="text-xl hover:scale-110 transition-transform duration-200" />
+            <div className="space-y-6 md:space-y-8">
+              <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="p-2 sm:p-3 rounded-lg text-[#7BAE4B] bg-green-100 my-auto">
+                  <FaPhone className="text-lg sm:text-xl hover:scale-110 transition-transform duration-200" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-1">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1">
                     Call Us
                   </h3>
-                  <p className="text-gray-600">+1 (555) 123-4567</p>
-                  <p className="text-gray-600 text-sm">(Emergency: +1 (555) 987-6543)</p>
+                  <p className="text-sm sm:text-base text-gray-600">+1 (555) 123-4567</p>
+                  <p className="text-xs sm:text-sm text-gray-600">(Emergency: +1 (555) 987-6543)</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-5 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="p-3 text-[#7BAE4B] group-hover:bg-green-600 group-hover:text-white transition-colors duration-300 bg-green-100 rounded-lg my-auto">
-                  <FaEnvelope className="text-xl hover:scale-110 transition-transform duration-200" />
+              <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="p-2 sm:p-3 text-[#7BAE4B] bg-green-100 rounded-lg my-auto">
+                  <FaEnvelope className="text-lg sm:text-xl hover:scale-110 transition-transform duration-200" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-1">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1">
                     Email Us
                   </h3>
-                  <p className="text-gray-600">info@petservice.com</p>
-                  <p className="text-gray-600 text-sm">support@petservice.com</p>
+                  <p className="text-sm sm:text-base text-gray-600">info@petservice.com</p>
+                  <p className="text-xs sm:text-sm text-gray-600">support@petservice.com</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-5 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="p-3 text-[#7BAE4B] group-hover:bg-green-600 group-hover:text-white transition-all duration-300 bg-green-100 rounded-lg my-auto">
-  <FaMapMarkerAlt className="text-xl hover:scale-110 transition-transform duration-200" />
-</div>
+              <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="p-2 sm:p-3 text-[#7BAE4B] bg-green-100 rounded-lg my-auto">
+                  <FaMapMarkerAlt className="text-lg sm:text-xl hover:scale-110 transition-transform duration-200" />
+                </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-1">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1">
                     Visit Us
                   </h3>
-                  <p className="text-gray-600">123 Pet Care Avenue</p>
-                  <p className="text-gray-600">New York, NY 10001</p>
+                  <p className="text-sm sm:text-base text-gray-600">123 Pet Care Avenue</p>
+                  <p className="text-sm sm:text-base text-gray-600">New York, NY 10001</p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-10 p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 text-[#7BAE4B] group-hover:bg-green-600 group-hover:text-white transition-colors duration-300 bg-green-100 rounded-lg">
-                  <FaClock className="text-lg hover:scale-110 transition-transform duration-200" />
+            <div className="mt-8 md:mt-10 p-4 md:p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+              <div className="flex items-center gap-3 mb-3 md:mb-4">
+                <div className="p-2 text-[#7BAE4B] bg-green-100 rounded-lg">
+                  <FaClock className="text-base md:text-lg hover:scale-110 transition-transform duration-200" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-lg md:text-xl font-semibold text-gray-800">
                   Business Hours
                 </h3>
               </div>
-              <ul className="space-y-3 text-gray-600">
+              <ul className="space-y-2 md:space-y-3 text-sm md:text-base text-gray-600">
                 <li className="flex justify-between py-2 border-b border-gray-100">
                   <span className="font-medium">Monday - Friday</span>
                   <span>8:00 AM - 8:00 PM</span>
@@ -133,17 +133,17 @@ const Contact_Form = () => {
 
           {/* Right Side - Contact Form */}
           <div className="lg:w-1/2">
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-bold text-green-500 mb-2">
-                Send Us a  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-[#7BAE4B]">Message</span>
+            <div className="bg-white p-5 sm:p-6 md:p-8 rounded-xl shadow-lg border border-gray-100">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-green-500 mb-2">
+                Send Us a <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-[#7BAE4B]">Message</span>
               </h3>
-              <p className="text-gray-500 mb-6">We'll get back to you within 24 hours</p>
+              <p className="text-sm md:text-base text-gray-500 mb-4 md:mb-6">We'll get back to you within 24 hours</p>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-gray-700 mb-1 md:mb-2"
                   >
                     Your Name <span className="text-green-400">*</span>
                   </label>
@@ -154,16 +154,16 @@ const Contact_Form = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-green-200 focus:border-[#7BAE4B] focus:ring-2 focus:ring-green-100 outline-none transition-all duration-200 placeholder-gray-400"
+                    className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-green-200 focus:border-[#7BAE4B] focus:ring-2 focus:ring-green-100 outline-none transition-all duration-200 placeholder-gray-400 text-sm md:text-base"
                     placeholder="John Doe"
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-5">
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                      className="block text-sm font-medium text-gray-700 mb-1 md:mb-2"
                     >
                       Email <span className="text-green-400">*</span>
                     </label>
@@ -174,7 +174,7 @@ const Contact_Form = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-green-200 focus:border-[#7BAE4B] focus:ring-2 focus:ring-green-100 outline-none transition-all duration-200 placeholder-gray-400"
+                      className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-green-200 focus:border-[#7BAE4B] focus:ring-2 focus:ring-green-100 outline-none transition-all duration-200 placeholder-gray-400 text-sm md:text-base"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -182,7 +182,7 @@ const Contact_Form = () => {
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                      className="block text-sm font-medium text-gray-700 mb-1 md:mb-2"
                     >
                       Phone Number
                     </label>
@@ -192,7 +192,7 @@ const Contact_Form = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-green-200 focus:border-[#7BAE4B] focus:ring-2 focus:ring-green-100 outline-none transition-all duration-200 placeholder-gray-400"
+                      className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-green-200 focus:border-[#7BAE4B] focus:ring-2 focus:ring-green-100 outline-none transition-all duration-200 placeholder-gray-400 text-sm md:text-base"
                       placeholder="(123) 456-7890"
                     />
                   </div>
@@ -201,7 +201,7 @@ const Contact_Form = () => {
                 <div>
                   <label
                     htmlFor="address"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-gray-700 mb-1 md:mb-2"
                   >
                     Address
                   </label>
@@ -211,7 +211,7 @@ const Contact_Form = () => {
                     name="address"
                     value={formData.address}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-green-200 focus:border-[#7BAE4B] focus:ring-2 focus:ring-green-100 outline-none transition-all duration-200 placeholder-gray-400"
+                    className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-green-200 focus:border-[#7BAE4B] focus:ring-2 focus:ring-green-100 outline-none transition-all duration-200 placeholder-gray-400 text-sm md:text-base"
                     placeholder="123 Main St"
                   />
                 </div>
@@ -219,7 +219,7 @@ const Contact_Form = () => {
                 <div>
                   <label
                     htmlFor="petType"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-gray-700 mb-1 md:mb-2"
                   >
                     Pet Type
                   </label>
@@ -229,7 +229,7 @@ const Contact_Form = () => {
                       name="petType"
                       value={formData.petType}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-green-200 focus:border-[#7BAE4B] focus:ring-2 focus:ring-green-100 outline-none transition-all duration-200 appearance-none bg-white text-gray-700"
+                      className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-green-200 focus:border-[#7BAE4B] focus:ring-2 focus:ring-green-100 outline-none transition-all duration-200 appearance-none bg-white text-gray-700 text-sm md:text-base"
                     >
                       {petOptions.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -238,7 +238,7 @@ const Contact_Form = () => {
                       ))}
                     </select>
                     <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                      <FaPaw className="h-5 w-5 text-green-400" />
+                      <FaPaw className="h-4 w-4 md:h-5 md:w-5 text-green-400" />
                     </div>
                   </div>
                 </div>
@@ -246,7 +246,7 @@ const Contact_Form = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-gray-700 mb-1 md:mb-2"
                   >
                     Your Message <span className="text-green-400">*</span>
                   </label>
@@ -257,25 +257,25 @@ const Contact_Form = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-green-200 focus:border-[#7BAE4B] focus:ring-2 focus:ring-green-100 outline-none transition-all duration-200 placeholder-gray-400"
+                    className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-green-200 focus:border-[#7BAE4B] focus:ring-2 focus:ring-green-100 outline-none transition-all duration-200 placeholder-gray-400 text-sm md:text-base"
                     placeholder="Tell us about your pet's needs..."
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-3.5 bg-gradient-to-r from-green-600 to-[#7BAE4B] text-white rounded-xl shadow-lg hover:shadow-xl hover:bg-green-500 transition-all duration-300 font-semibold flex items-center justify-center gap-2"
+                  className="w-full px-4 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-3.5 bg-gradient-to-r from-green-600 to-[#7BAE4B] text-white rounded-lg md:rounded-xl shadow-lg hover:shadow-xl hover:bg-green-500 transition-all duration-300 font-medium sm:font-semibold flex items-center justify-center gap-2 text-sm sm:text-base"
                 >
                   Send Message
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
                   </svg>
                 </button>
               </form>
             </div>
 
-            <div className="mt-6 p-4 bg-indigo-50 rounded-lg border border-indigo-100 text-center">
-              <p className="text-sm text-gray-800">
+            <div className="mt-4 md:mt-6 p-3 md:p-4 bg-indigo-50 rounded-lg border border-indigo-100 text-center">
+              <p className="text-xs sm:text-sm text-gray-800">
                 <span className="font-medium text-[#7BAE4B]">Quick response:</span> We typically respond within 24 hours during business days.
               </p>
             </div>

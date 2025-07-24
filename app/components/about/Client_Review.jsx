@@ -46,8 +46,13 @@ const Client_Review = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      const newVisibleCards = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
-      setVisibleCards(newVisibleCards);
+      if (window.innerWidth >= 1280) {
+        setVisibleCards(3);
+      } else if (window.innerWidth >= 768) {
+        setVisibleCards(2);
+      } else {
+        setVisibleCards(1);
+      }
       setCurrentIndex(0);
     };
 
@@ -68,19 +73,24 @@ const Client_Review = () => {
 
   const updateCarousel = () => {
     if (trackRef.current) {
-      const cardWidth = trackRef.current.children[0]?.offsetWidth || 0;
-      const gap = 16; // px-4 gap
+      const card = trackRef.current.children[0];
+      if (!card) return;
+      
+      const cardWidth = card.offsetWidth;
+      const gap = parseFloat(window.getComputedStyle(card).marginRight);
       const offset = -currentIndex * (cardWidth + gap);
       trackRef.current.style.transform = `translateX(${offset}px)`;
     }
   };
 
   const nextSlide = () => {
-    setCurrentIndex(prev => (prev + 1) % (testimonials.length - visibleCards + 1));
+    const maxIndex = Math.max(0, testimonials.length - visibleCards);
+    setCurrentIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setCurrentIndex(prev => (prev - 1 + (testimonials.length - visibleCards + 1)) % (testimonials.length - visibleCards + 1));
+    const maxIndex = Math.max(0, testimonials.length - visibleCards);
+    setCurrentIndex(prev => (prev <= 0 ? maxIndex : prev - 1));
   };
 
   const goToSlide = (index) => {
@@ -120,17 +130,17 @@ const Client_Review = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-blue-50 py-16 px-4">
+    <div className="bg-gradient-to-br from-gray-50 to-blue-50 py-12 sm:py-16 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 text-sm font-semibold bg-[#7BAE4B] text-white rounded-full mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <span className="inline-block px-3 py-1 text-xs sm:text-sm font-semibold bg-[#7BAE4B] text-white rounded-full mb-3 sm:mb-4">
             TESTIMONIALS
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-3 sm:mb-4">
             What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-[#7BAE4B]">Clients Say</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-[#7BAE4B] mx-auto mb-6 rounded-full"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-green-400 to-[#7BAE4B] mx-auto mb-4 sm:mb-6 rounded-full"></div>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             Don't just take our word for it - hear from our satisfied customers
           </p>
         </div>
@@ -142,18 +152,20 @@ const Client_Review = () => {
               prevSlide();
               resetAutoSlide();
             }}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 md:-ml-8 z-10 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-700 hover:text-white hover:bg-gradient-to-r from-green-500 to-[#7BAE4B] transition-all duration-300 group"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -ml-2 sm:-ml-4 md:-ml-8 z-10 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md sm:shadow-lg flex items-center justify-center text-gray-700 hover:text-white hover:bg-gradient-to-r from-green-500 to-[#7BAE4B] transition-all duration-300 group"
+            aria-label="Previous testimonial"
           >
-            <FaChevronLeft className="text-xl group-hover:scale-110 transition-transform" />
+            <FaChevronLeft className="text-sm sm:text-base md:text-xl group-hover:scale-110 transition-transform" />
           </button>
           <button
             onClick={() => {
               nextSlide();
               resetAutoSlide();
             }}
-            className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 md:-mr-8 z-10 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-700 hover:text-white hover:bg-gradient-to-r from-green-500 to-[#7BAE4B] transition-all duration-300 group"
+            className="absolute right-0 top-1/2 -translate-y-1/2 -mr-2 sm:-mr-4 md:-mr-8 z-10 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md sm:shadow-lg flex items-center justify-center text-gray-700 hover:text-white hover:bg-gradient-to-r from-green-500 to-[#7BAE4B] transition-all duration-300 group"
+            aria-label="Next testimonial"
           >
-            <FaChevronRight className="text-xl group-hover:scale-110 transition-transform" />
+            <FaChevronRight className="text-sm sm:text-base md:text-xl group-hover:scale-110 transition-transform" />
           </button>
 
           {/* Carousel Container */}
@@ -164,31 +176,32 @@ const Client_Review = () => {
           >
             <div
               ref={trackRef}
-              className="flex transition-transform duration-700 ease-out"
+              className="flex transition-transform duration-500 ease-out"
             >
               {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4"
+                  className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-2 sm:px-3 md:px-4"
                 >
-                  <div className="bg-white p-8 rounded-2xl shadow-md h-full border border-gray-100 hover:border-blue-100 transition-all duration-500 hover:shadow-xl group">
+                  <div className="bg-white p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-sm sm:shadow-md h-full border border-gray-100 hover:border-blue-100 transition-all duration-300 hover:shadow-lg group">
                     <div className="relative">
-                      <FaQuoteLeft className="text-blue-100 text-4xl absolute -top-2 -left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="flex items-center mb-4">
-                        <div className="flex space-x-1">
+                      <FaQuoteLeft className="text-blue-100 text-2xl sm:text-3xl md:text-4xl absolute -top-1 sm:-top-2 -left-1 sm:-left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="flex items-center mb-3 sm:mb-4">
+                        <div className="flex space-x-0.5 sm:space-x-1">
                           {renderStars(testimonial.rating)}
                         </div>
                       </div>
-                      <p className="text-gray-600 mb-6 relative z-10">"{testimonial.quote}"</p>
+                      <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 relative z-10">"{testimonial.quote}"</p>
                       <div className="flex items-center">
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-14 h-14 rounded-full object-cover mr-4 border-2 border-green-300 group-hover:border-green-400 transition-colors duration-300"
+                          className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full object-cover mr-3 sm:mr-4 border-2 border-green-300 group-hover:border-green-400 transition-colors duration-300"
+                          loading="lazy"
                         />
                         <div>
-                          <h4 className="font-semibold text-gray-800">{testimonial.name}</h4>
-                          <p className="text-gray-500 text-sm">{testimonial.role}</p>
+                          <h4 className="font-semibold text-gray-800 text-sm sm:text-base">{testimonial.name}</h4>
+                          <p className="text-gray-500 text-xs sm:text-sm">{testimonial.role}</p>
                         </div>
                       </div>
                     </div>
@@ -199,14 +212,15 @@ const Client_Review = () => {
           </div>
 
           {/* Indicators */}
-          <div className="flex justify-center mt-12 space-x-2">
-            {testimonials.slice(0, testimonials.length - visibleCards + 1).map((_, index) => (
+          <div className="flex justify-center mt-8 sm:mt-12 space-x-1.5 sm:space-x-2">
+            {Array.from({ length: Math.max(1, testimonials.length - visibleCards + 1) }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? 'bg-gradient-to-r from-green-500 to-green-600 w-8' : 'bg-green-300'
+                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex ? 'bg-gradient-to-r from-green-500 to-green-600 w-6 sm:w-8' : 'bg-green-300'
                 }`}
+                aria-label={`Go to testimonial ${index + 1}`}
               />
             ))}
           </div>
