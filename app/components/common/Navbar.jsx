@@ -9,20 +9,28 @@ import { HiMinusSmall } from "react-icons/hi2";
 
 
 const petsArray = [
-  {
-    id: 1,
-    img: "https://images.unsplash.com/photo-1752834370400-da734c87f565?w=500",
-    name: "Rodents",
-  },
-  { id: 2, img: "/Navbar/cockroaches.jpg", name: "Cockroaches" },
-  { id: 3, img: "/Navbar/fleas.jpg", name: "Fleas" },
-  { id: 4, img: "/Navbar/bedbugs.png", name: "Bed Bugs" },
-  { id: 5, img: "/Navbar/wasps.jpg", name: "Wasps" },
-  { id: 6, img: "/Navbar/pigeons.png", name: "Pigeons" },
-  { id: 7, img: "/Navbar/honeybee.jpg", name: "Honey Bee" },
-  { id: 8, img: "/Navbar/moths.jpg", name: "Moths" },
-  { id: 9, img: "/Navbar/fox.jpg", name: "Foxes" },
+  {id: 1,img: "/Navbar/mouse.png",name: "Rodents", link:"/hoverbird/rodent"  },
+  { id: 2, img: "/Navbar/cockroaches.jpg", name: "Cockroaches", link:"/hoverbird/cockraches"  },
+  { id: 3, img: "/Navbar/fleas.jpg", name: "Fleas", link:"/hoverbird/fleas"  },
+  { id: 4, img: "/Navbar/bedbugs.png", name: "Bed Bugs", link:"/hoverbird/bedbugs"  },
+  { id: 5, img: "/Navbar/wasps.jpg", name: "Wasps", link:"/hoverbird/wasps"  },
+  { id: 6, img: "/Navbar/pigeons.png", name: "Pigeons", link:"/hoverbird/pigeon"  },
+  { id: 7, img: "/Navbar/honeybee.jpg", name: "Honey Bee", link:"/hoverbird/honeybee"  },
+  { id: 8, img: "/Navbar/moths.jpg", name: "Moths", link:"/hoverbird/moth"  },
+  { id: 9, img: "/Navbar/fox.jpg", name: "Foxes", link:"/hoverbird/fox"  },
 ];
+
+const petsPath=[
+  {id:1,path:"/rodent"},
+  {id:2,path:""},
+  {id:3,path:""},
+  {id:4,path:""},
+  {id:5,path:""},
+  {id:6,path:""},
+  {id:7,path:""},
+  {id:8,path:""},
+  {id:9,path:""}
+]
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -140,9 +148,9 @@ const Navbar = () => {
                 <div className="w-full flex flex-col">
                   <div className="flex justify-between w-full">
                     {" "}
-                    <div className="hover:text-green-500  transition-all duration-200 cursor-pointer">
+                  <Link href="/">  <div className="hover:text-green-500  transition-all duration-200 cursor-pointer">
                       Pest-Control
-                    </div>
+                    </div></Link>
                     <div className="relative">
                       {plus && (
                         <span>
@@ -164,7 +172,7 @@ const Navbar = () => {
                   {Rodent && (
                     <div className=" w-full rounded-md mt-2 pl-10 py-2 text-white">
                       {petsArray.map((item) => (
-                        <Link key={item.id} href="#">
+                        <Link key={item.id} href={item.link}>
                           <div className="flex  gap-10 border border-gray-400 rounded-sm p-2 my-3">
                             <img
                               src={item.img}
@@ -181,15 +189,15 @@ const Navbar = () => {
               </li>
 
               <li>
-                <Link href="#" className="hover:text-green-500">
+                <Link href="/birdcontrol" className="hover:text-green-500">
                   Bird Control
                 </Link>
               </li>
               <div>
                 <li className="flex w-full justify-between items-center border-b pb-2 border-gray-400">
-                  <div className="hover:text-green-500  transition-all duration-200 cursor-pointer">
+                 <Link href="/services"> <div className="hover:text-green-500  transition-all duration-200 cursor-pointer">
                     Cleaning Serivces
-                  </div>
+                  </div></Link>
                   <div className="relative">
                     {pluswash && (
                       <span>
@@ -211,22 +219,22 @@ const Navbar = () => {
                 {cleaning && (
                   <div className=" w-full shadow   rounded-md py-2 text-white">
                     <ul className="px-4 mt-4">
-                      <Link href="/">
+                      <Link href="/cleaning">
                         <li className="px-4 border my-2 border-gray-400 rounded-sm py-2 hover:bg-gray-100 ">
                           Contract Cleaning
                         </li>
                       </Link>
-                      <Link href="/">
+                      <Link href="/rubbishclean">
                         <li className="px-4 border my-2 border-gray-400 rounded-sm py-2 hover:bg-gray-100">
                           Rubbish Removal
                         </li>
                       </Link>
-                      <Link href="/">
+                      <Link href="/windowclen">
                         <li className="px-4 border my-2 border-gray-400 rounded-sm py-2 hover:bg-gray-100">
                           Window Cleaning
                         </li>
                       </Link>
-                      <Link href="/">
+                      <Link href="/washroomclean">
                         <li className="px-4 border border-gray-400 rounded-sm py-2 hover:bg-gray-100">
                           Washroom Services
                         </li>
@@ -237,13 +245,13 @@ const Navbar = () => {
               </div>
 
               <li>
-                <Link href="#" className="hover:text-green-500">
+                <Link href="/about" className="hover:text-green-500">
                   About Us
                 </Link>
               </li>
 
               <li>
-                <Link href="#" className="hover:text-green-500">
+                <Link href="/contact" className="hover:text-green-500">
                   Contact
                 </Link>
               </li>
@@ -270,12 +278,13 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-10 text-md font-semibold">
           {/* Pest-Control Dropdown */}
           <div className="relative group">
-            <div className="hover:text-green-500 flex items-center cursor-pointer">
+           <Link href="/"> <div className="hover:text-green-500 flex items-center cursor-pointer">
               Pest-Control <FaSortDown className="ml-1" />
             </div>
+           </Link>
             <div className="absolute z-10 top-4  left-0 mt-2 bg-white rounded-md shadow p-4 hidden group-hover:block w-56">
               {petsArray.map((item) => (
-                <Link href="#" key={item.id}>
+                <Link href={item.link} key={item.id}>
                   <div className="flex items-center  gap-3 py-2 hover:bg-gray-100 px-2 rounded">
                     <img
                       src={item.img}
@@ -289,7 +298,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Link href="#" className="hover:text-green-500">
+          <Link href="/birdcontrol" className="hover:text-green-500">
             Bird Control
           </Link>
 
@@ -299,28 +308,28 @@ const Navbar = () => {
             onMouseEnter={showClean}
             onMouseLeave={hideClean}
           >
-            <div className="hover:text-green-500 flex items-center cursor-pointer">
-              Cleaning Services <FaSortDown className="ml-1" />
-            </div>
+              <Link href="/services"> <div className="hover:text-green-500  transition-all duration-200 cursor-pointer">
+                    Cleaning Serivces
+                  </div></Link>
             {servic && (
               <div className="absolute top-6 left-0 shadow w-56 bg-white rounded-md py-2 text-black">
                 <ul className="p-2">
-                  <Link href="/">
+                  <Link href="/cleaning">
                     <li className="px-4 py-2 hover:bg-gray-100 ">
                       Contract Cleaning
                     </li>
                   </Link>
-                  <Link href="/">
+                  <Link href="/rubbishclean">
                     <li className="px-4 py-2 hover:bg-gray-100">
                       Rubbish Removal
                     </li>
                   </Link>
-                  <Link href="/">
+                  <Link href="/windowclen">
                     <li className="px-4 py-2 hover:bg-gray-100">
                       Window Cleaning
                     </li>
                   </Link>
-                  <Link href="/">
+                  <Link href="/washroomclean">
                     <li className="px-4 py-2 hover:bg-gray-100">
                       Washroom Services
                     </li>
@@ -330,10 +339,10 @@ const Navbar = () => {
             )}
           </div>
 
-          <Link href="#" className="hover:text-green-500">
+          <Link href="/about" className="hover:text-green-500">
             About Us
           </Link>
-          <Link href="#" className="hover:text-green-500">
+          <Link href="/contact" className="hover:text-green-500">
             Contact
           </Link>
         </div>
