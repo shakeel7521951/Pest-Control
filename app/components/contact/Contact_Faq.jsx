@@ -37,49 +37,54 @@ const Contact_Faq = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-green-100 to-blue-50 py-20 px-4">
+    <div className="bg-gradient-to-br from-green-100 to-blue-50 py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
       <section className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center bg-green-100 rounded-full px-4 py-2 mb-4">
-            <FaFeatherAlt className="text-[#7BAE4B] mr-2" />
-            <span className="text-sm font-semibold text-[#7BAE4B] uppercase tracking-wider">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center justify-center bg-green-100 rounded-full px-3 py-1 sm:px-4 sm:py-2 mb-3 sm:mb-4">
+            <FaFeatherAlt className="text-[#7BAE4B] mr-2 text-sm sm:text-base" />
+            <span className="text-xs sm:text-sm font-semibold text-[#7BAE4B] uppercase tracking-wider">
               Avian Care FAQs
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
             Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-[#7BAE4B]">Questions</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-[#7BAE4B] mx-auto rounded-full mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-green-400 to-[#7BAE4B] mx-auto rounded-full mb-4 sm:mb-6"></div>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-2 sm:px-0">
             Quick answers to common questions about bird care and our services
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
             <div 
               key={index}
-              className="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100"
+              className="group bg-white rounded-lg sm:rounded-xl shadow-sm hover:shadow-md sm:shadow-md sm:hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100"
             >
               <button 
-                className={`flex w-full items-center justify-between p-6 text-left focus:outline-none transition-colors ${activeIndex === index ? 'bg-green-50' : 'hover:bg-green-50'}`}
+                className={`flex w-full items-center justify-between p-4 sm:p-6 text-left focus:outline-none transition-colors ${activeIndex === index ? 'bg-green-50' : 'hover:bg-green-50'}`}
                 onClick={() => toggleAccordion(index)}
+                aria-expanded={activeIndex === index}
+                aria-controls={`faq-content-${index}`}
               >
-                <h3 className="text-lg md:text-xl font-semibold text-green-600 pr-4">
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-green-600 pr-2 sm:pr-4">
                   {faq.question}
                 </h3>
                 <svg 
-                  className={`flex-shrink-0 h-5 w-5 text-green-600 transition-transform duration-300 ${activeIndex === index ? 'rotate-180' : ''}`}
+                  className={`flex-shrink-0 h-4 w-4 sm:h-5 sm:w-5 text-green-600 transition-transform duration-300 ${activeIndex === index ? 'rotate-180' : ''}`}
                   viewBox="0 0 20 20" 
                   fill="currentColor"
+                  aria-hidden="true"
                 >
                   <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </button>
               <div 
+                id={`faq-content-${index}`}
                 className={`transition-all duration-300 ease-in-out ${activeIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                role="region"
               >
-                <div className="px-6 pb-6 text-gray-600">
+                <div className="px-4 pb-4 sm:px-6 sm:pb-6 text-gray-600 text-sm sm:text-base">
                   {faq.answer}
                 </div>
               </div>
