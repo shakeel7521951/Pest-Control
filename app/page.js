@@ -1,4 +1,4 @@
-import Contact from "./components/home/Contact";
+import Certificate from "./components/home/Certificate";
 import Header from "./components/home/Header";
 import LatestNews from "./components/home/LatestNews";
 import PetControl from "./components/home/PetControl";
@@ -14,9 +14,9 @@ export default function Home() {
       <Header />
       <PetControl />
       <Services />
-      {/* <Contact /> */}
       <LatestNews />
       <PickAPet />
+      <Certificate/>
     </div>
   );
 }
