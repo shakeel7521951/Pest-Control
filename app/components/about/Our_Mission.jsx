@@ -1,3 +1,4 @@
+import Link from 'next/link'
 const Our_Mission = () => {
   return (
     <section className="relative overflow-hidden py-10 sm:py-14 px-4 sm:px-6 lg:px-8">
@@ -57,12 +58,12 @@ const Our_Mission = () => {
               </ul>
               
               <div className="flex flex-wrap gap-2 sm:gap-3">
-                <button className="px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-green-500 to-[#7BAE4B] text-white font-medium rounded-full shadow hover:shadow-md transition-all duration-300 hover:scale-[1.02] transform text-xs sm:text-sm">
+                <Link href="/contact"><button className="px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-green-500 to-[#7BAE4B] text-white font-medium rounded-full shadow hover:shadow-md transition-all duration-300 hover:scale-[1.02] transform text-xs sm:text-sm">
                   Join Our Cause
-                </button>
-                <button className="px-4 sm:px-5 py-2 sm:py-2.5 bg-white text-[#7BAE4B] font-medium rounded-full border border-[#7BAE4B] shadow-sm hover:bg-green-50 transition-all duration-300 text-xs sm:text-sm">
+                </button></Link>
+             <Link href="/contact">   <button className="px-4 sm:px-5 py-2 sm:py-2.5 bg-white text-[#7BAE4B] font-medium rounded-full border border-[#7BAE4B] shadow-sm hover:bg-green-50 transition-all duration-300 text-xs sm:text-sm">
                   Donate Now
-                </button>
+                </button></Link>
               </div>
             </div>
           </div>

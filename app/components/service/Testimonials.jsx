@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link'
 const Testimonials = () => {
   return (
     <section className="bg-green-100 text-black rounded-t-xl px-4 sm:px-6 lg:px-12 py-10 sm:py-12 relative -top-12">
@@ -51,9 +51,9 @@ const Testimonials = () => {
         </div>
 
         <div className="text-center mt-6 sm:mt-10">
-          <button className="bg-white text-[#7BAE4B] px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-md hover:shadow-lg">
+       <Link href="/about">   <button className="bg-white text-[#7BAE4B] px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-md hover:shadow-lg">
             Read More Testimonials
-          </button>
+          </button></Link>
         </div>
       </div>
     </section>

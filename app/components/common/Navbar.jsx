@@ -6,31 +6,44 @@ import { RxCross1 } from "react-icons/rx";
 import { FaSortDown } from "react-icons/fa";
 import { GoPlus } from "react-icons/go";
 import { HiMinusSmall } from "react-icons/hi2";
-
+import Image from "next/image";
 
 const petsArray = [
-  {id: 1,img: "/Navbar/mouse.png",name: "Rodents", link:"/hoverbird/rodent"  },
-  { id: 2, img: "/Navbar/cockroaches.jpg", name: "Cockroaches", link:"/hoverbird/cockraches"  },
-  { id: 3, img: "/Navbar/fleas.jpg", name: "Fleas", link:"/hoverbird/fleas"  },
-  { id: 4, img: "/Navbar/bedbugs.png", name: "Bed Bugs", link:"/hoverbird/bedbugs"  },
-  { id: 5, img: "/Navbar/wasps.jpg", name: "Wasps", link:"/hoverbird/wasps"  },
-  { id: 6, img: "/Navbar/pigeons.png", name: "Pigeons", link:"/hoverbird/pigeon"  },
-  { id: 7, img: "/Navbar/honeybee.jpg", name: "Honey Bee", link:"/hoverbird/honeybee"  },
-  { id: 8, img: "/Navbar/moths.jpg", name: "Moths", link:"/hoverbird/moth"  },
-  { id: 9, img: "/Navbar/fox.jpg", name: "Foxes", link:"/hoverbird/fox"  },
+  {
+    id: 1,
+    img: "/Navbar/mouse.png",
+    name: "Rodents",
+    link: "/hoverbird/rodent",
+  },
+  {
+    id: 2,
+    img: "/Navbar/cockroaches.jpg",
+    name: "Cockroaches",
+    link: "/hoverbird/cockraches",
+  },
+  { id: 3, img: "/Navbar/fleas.jpg", name: "Fleas", link: "/hoverbird/fleas" },
+  {
+    id: 4,
+    img: "/Navbar/bedbugs.png",
+    name: "Bed Bugs",
+    link: "/hoverbird/bedbugs",
+  },
+  { id: 5, img: "/Navbar/wasps.jpg", name: "Wasps", link: "/hoverbird/wasps" },
+  {
+    id: 6,
+    img: "/Navbar/pigeons.png",
+    name: "Pigeons",
+    link: "/hoverbird/pigeon",
+  },
+  {
+    id: 7,
+    img: "/Navbar/honeybee.jpg",
+    name: "Honey Bee",
+    link: "/hoverbird/honeybee",
+  },
+  { id: 8, img: "/Navbar/moths.jpg", name: "Moths", link: "/hoverbird/moth" },
+  { id: 9, img: "/Navbar/fox.jpg", name: "Foxes", link: "/hoverbird/fox" },
 ];
-
-const petsPath=[
-  {id:1,path:"/rodent"},
-  {id:2,path:""},
-  {id:3,path:""},
-  {id:4,path:""},
-  {id:5,path:""},
-  {id:6,path:""},
-  {id:7,path:""},
-  {id:8,path:""},
-  {id:9,path:""}
-]
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -48,32 +61,29 @@ const Navbar = () => {
   const menuRef = useRef(null);
   const btnRef = useRef(null);
 
-  const showCleaning = () => {
+  const showCleaning = (e) => {
+    e.stopPropagation();
     setpluswash(false);
     setcleaning(true);
     setminuswash(true);
   };
-  const handleClickB = () => {
-    setRodent(false);
-    setplus(true);
-  };
 
-  const handleClickA = () => {
-    setcleaning(false);
-    setpluswash(true);
-  };
-  const hideCleaning = () => {
+  const hideCleaning = (e) => {
+    e.stopPropagation();
     setpluswash(true);
     setminuswash(false);
     setcleaning(false);
   };
 
-  const showRodent = () => {
+  const showRodent = (e) => {
+    e.stopPropagation();
     setplus(false);
     setminus(true);
     setRodent(true);
   };
-  const hideRodent = () => {
+
+  const hideRodent = (e) => {
+    e.stopPropagation();
     setminus(false);
     setplus(true);
     setRodent(false);
@@ -81,12 +91,10 @@ const Navbar = () => {
 
   const showMobile = () => {
     setShow(true);
-    setMenu(false);
   };
 
   const hideMobile = () => {
     setShow(false);
-    setMenu(true);
   };
 
   const showClean = () => setServic(true);
@@ -117,156 +125,154 @@ const Navbar = () => {
     <nav className="relative z-50 w-full shadow-xl text-black bg-white">
       <div className="lg:w-[90vw] px-2 mx-auto flex py-3 justify-between items-center">
         <Link href="/">
-          <div className="w-20 h-20 cursor-pointer">
-            <img
+          <div className="w-20 h-20 cursor-pointer relative">
+            <Image
               src="/logo22.png"
               alt="Logo"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              priority
             />
           </div>
         </Link>
 
-        {/* Mobile Sidebar */}
+         {/* Mobile Sidebar - 50% width */}
         {show && (
           <div
             ref={menuRef}
-            className="absolute  top-0 right-0 lg:hidden w-full min-h-screen bg-black sm:w-[50%] z-50 px-6 py-0"
+            className="fixed top-0 right-0 h-full w-[80%] sm:w-[60%] md:w-[50%] bg-gradient-to-b from-green-600 to-green-800 text-white lg:hidden z-50 overflow-y-auto shadow-xl"
           >
-            <div className="absolute top-6 right-6">
-              <RxCross1
-                className="text-white text-lg cursor-pointer"
-                onClick={hideMobile}
-              />
-            </div>
+            <div className="px-6 py-8">
+              <div className="flex justify-end mb-8">
+                <RxCross1
+                  className="text-3xl text-white cursor-pointer hover:text-green-200 transition-colors"
+                  onClick={hideMobile}
+                />
+              </div>
 
-            <ul className="mt-18 flex flex-col   gap-5 text-lg font-semibold text-white">
-              <li
-                onMouseEnter={showPets}
-                onMouseLeave={hidePets}
-                className="flex justify-between border-b  py-2  items-center border-gray-400 pb-2"
-              >
-                <div className="w-full flex flex-col">
-                  <div className="flex justify-between w-full">
-                    {" "}
-                  <Link href="/">  <div className="hover:text-green-500  transition-all duration-200 cursor-pointer">
-                      Pest-Control
-                    </div></Link>
-                    <div className="relative">
-                      {plus && (
-                        <span>
+              <ul className="space-y-6 text-xl">
+                <li className="py-3">
+                  <div className="w-full flex flex-col">
+                    <div className="flex justify-between w-full items-center">
+                      <span className="font-bold text-2xl">Pest Control</span>
+                      <div className="relative">
+                        {plus ? (
                           <GoPlus
-                            onClick={() => {
-                              showRodent();
-                              handleClickA();
-                            }}
+                            onClick={showRodent}
+                            className="cursor-pointer text-2xl hover:text-green-200 transition-colors"
                           />
-                        </span>
-                      )}
-                      {minus && (
-                        <span className="absolute top-0 right-0 ">
-                          <HiMinusSmall onClick={hideRodent} />
-                        </span>
-                      )}
+                        ) : (
+                          <HiMinusSmall
+                            onClick={hideRodent}
+                            className="cursor-pointer text-2xl hover:text-green-200 transition-colors"
+                          />
+                        )}
+                      </div>
                     </div>
-                  </div>
-                  {Rodent && (
-                    <div className=" w-full rounded-md mt-2 pl-10 py-2 text-white">
-                      {petsArray.map((item) => (
-                        <Link key={item.id} href={item.link}>
-                          <div className="flex  gap-10 border border-gray-400 rounded-sm p-2 my-3">
-                            <img
-                              src={item.img}
-                              alt={item.name}
-                              className="w-8 h-8 object-cover"
-                            />
-                            <span>{item.name}</span>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </li>
-
-              <li>
-                <Link href="/birdcontrol" className="hover:text-green-500">
-                  Bird Control
-                </Link>
-              </li>
-              <div>
-                <li className="flex w-full justify-between items-center border-b pb-2 border-gray-400">
-                 <Link href="/services"> <div className="hover:text-green-500  transition-all duration-200 cursor-pointer">
-                    Cleaning Serivces
-                  </div></Link>
-                  <div className="relative">
-                    {pluswash && (
-                      <span>
-                        <GoPlus
-                          onClick={() => {
-                            showCleaning();
-                            handleClickB();
-                          }}
-                        />
-                      </span>
-                    )}
-                    {minuswash && (
-                      <span className="absolute top-0 right-0 ">
-                        <HiMinusSmall onClick={hideCleaning} />
-                      </span>
+                    {Rodent && (
+                      <div className="w-full mt-4 pl-4 py-2 grid grid-cols-1 gap-3">
+                        {petsArray.map((item) => (
+                          <Link key={item.id} href={item.link}>
+                            <div className="flex items-center gap-3 rounded-lg p-3 hover:bg-green-700/30 transition-all duration-200">
+                              <div className="w-10 h-10 relative rounded-full overflow-hidden border-2 border-white">
+                                <Image
+                                  src={item.img}
+                                  alt={item.name}
+                                  fill
+                                  className="object-cover"
+                                />
+                              </div>
+                              <span className="font-medium">{item.name}</span>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
                     )}
                   </div>
                 </li>
-                {cleaning && (
-                  <div className=" w-full shadow   rounded-md py-2 text-white">
-                    <ul className="px-4 mt-4">
+
+                <li className="py-3">
+                  <Link
+                    href="/birdcontrol"
+                    className="block font-bold text-2xl hover:text-green-200 transition-colors"
+                  >
+                    Bird Control
+                  </Link>
+                </li>
+
+                <li className="py-3">
+                  <div className="flex justify-between w-full items-center">
+                    <span className="font-bold text-2xl">Cleaning Services</span>
+                    <div className="relative">
+                      {pluswash ? (
+                        <GoPlus
+                          onClick={showCleaning}
+                          className="cursor-pointer text-2xl hover:text-green-200 transition-colors"
+                        />
+                      ) : (
+                        <HiMinusSmall
+                          onClick={hideCleaning}
+                          className="cursor-pointer text-2xl hover:text-green-200 transition-colors"
+                        />
+                      )}
+                    </div>
+                  </div>
+                  {cleaning && (
+                    <div className="w-full mt-4 pl-4 py-2 space-y-3">
                       <Link href="/cleaning">
-                        <li className="px-4 border my-2 border-gray-400 rounded-sm py-2 hover:bg-gray-100 ">
+                        <div className="px-4 py-3 rounded-lg hover:bg-green-700/30 transition-all duration-200">
                           Contract Cleaning
-                        </li>
+                        </div>
                       </Link>
                       <Link href="/rubbishclean">
-                        <li className="px-4 border my-2 border-gray-400 rounded-sm py-2 hover:bg-gray-100">
+                        <div className="px-4 py-3 rounded-lg hover:bg-green-700/30 transition-all duration-200">
                           Rubbish Removal
-                        </li>
+                        </div>
                       </Link>
                       <Link href="/windowclen">
-                        <li className="px-4 border my-2 border-gray-400 rounded-sm py-2 hover:bg-gray-100">
+                        <div className="px-4 py-3 rounded-lg hover:bg-green-700/30 transition-all duration-200">
                           Window Cleaning
-                        </li>
+                        </div>
                       </Link>
                       <Link href="/washroomclean">
-                        <li className="px-4 border border-gray-400 rounded-sm py-2 hover:bg-gray-100">
+                        <div className="px-4 py-3 rounded-lg hover:bg-green-700/30 transition-all duration-200">
                           Washroom Services
-                        </li>
+                        </div>
                       </Link>
-                    </ul>
-                  </div>
-                )}
+                    </div>
+                  )}
+                </li>
+
+                <li className="py-3">
+                  <Link
+                    href="/about"
+                    className="block font-bold text-2xl hover:text-green-200 transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+
+                <li className="py-3">
+                  <Link
+                    href="/contact"
+                    className="block font-bold text-2xl hover:text-green-200 transition-colors"
+                  >
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+
+              <div className="mt-12 text-center">
+                <Link href="/signup">
+                  <button className="relative px-12 py-4 font-bold text-lg text-white rounded-xl overflow-hidden bg-gradient-to-r from-green-500 to-green-600 shadow-lg transition-all duration-300 hover:from-green-600 hover:to-green-700 hover:shadow-xl transform hover:scale-105">
+                    <span className="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition duration-300"></span>
+                    <span className="relative z-10">Sign In</span>
+                  </button>
+                </Link>
               </div>
-
-              <li>
-                <Link href="/about" className="hover:text-green-500">
-                  About Us
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/contact" className="hover:text-green-500">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-
-            <div className="mt-10 mb-10 text-center">
-              <Link href="#">
-                <button className="px-10 border rounded-sm font-semibold text-white bg-black hover:bg-black/60 transition py-3">
-                  Sign In
-                </button>
-              </Link>
             </div>
           </div>
         )}
-
         {/* Mobile Menu Button */}
         {menu && (
           <div className="lg:hidden mr-3" ref={btnRef}>
@@ -278,19 +284,24 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-10 text-md font-semibold">
           {/* Pest-Control Dropdown */}
           <div className="relative group">
-           <Link href="/"> <div className="hover:text-green-500 flex items-center cursor-pointer">
-              Pest-Control <FaSortDown className="ml-1" />
-            </div>
-           </Link>
+            <Link href="/">
+              {" "}
+              <div className="hover:text-green-500 flex items-center cursor-pointer">
+                Pest-Control <FaSortDown className="ml-1" />
+              </div>
+            </Link>
             <div className="absolute z-10 top-4  left-0 mt-2 bg-white rounded-md shadow p-4 hidden group-hover:block w-56">
               {petsArray.map((item) => (
                 <Link href={item.link} key={item.id}>
                   <div className="flex items-center  gap-3 py-2 hover:bg-gray-100 px-2 rounded">
-                    <img
-                      src={item.img}
-                      alt={item.name}
-                      className="w-8 h-8 object-cover"
-                    />
+                    <div className="w-8 h-8 relative">
+                      <Image
+                        src={item.img}
+                        alt={item.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
                     <span>{item.name}</span>
                   </div>
                 </Link>
@@ -308,9 +319,12 @@ const Navbar = () => {
             onMouseEnter={showClean}
             onMouseLeave={hideClean}
           >
-              <Link href="/services"> <div className="hover:text-green-500  transition-all duration-200 cursor-pointer">
-                    Cleaning Serivces
-                  </div></Link>
+            <Link href="/services">
+              {" "}
+              <div className="hover:text-green-500  transition-all duration-200 cursor-pointer">
+                Cleaning Serivces
+              </div>
+            </Link>
             {servic && (
               <div className="absolute top-6 left-0 shadow w-56 bg-white rounded-md py-2 text-black">
                 <ul className="p-2">
@@ -349,9 +363,10 @@ const Navbar = () => {
 
         {/* Desktop Sign In */}
         <div className="hidden lg:block">
-          <Link href="#">
-            <button className="px-10 rounded-sm font-semibold text-white bg-black hover:bg-black/60 transition py-3">
-              Sign In
+          <Link href="/signup">
+            <button className="relative cursor-pointer px-10 py-3 font-semibold text-white rounded-xl overflow-hidden bg-gradient-to-br from-green-500 to-green-700 shadow-lg transition-all duration-300 group hover:scale-105 hover:shadow-2xl">
+              <span className="absolute inset-0  bg-white opacity-10 blur-lg group-hover:opacity-20 transition duration-300"></span>
+              <span className="relative z-10">Sign In</span>
             </button>
           </Link>
         </div>

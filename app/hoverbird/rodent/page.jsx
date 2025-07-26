@@ -1,5 +1,6 @@
 import HeroRodent from '@/app/components/birdComponent/rodentF/HeroRodent';
 import EnquiryForm from '@/app/components/EnquiryForm';
+import PickAPet from '@/app/components/home/PickAPet';
 import React from 'react'
 
 const page = () => {
@@ -7,6 +8,7 @@ const page = () => {
     <div>
         <HeroRodent/>
         <EnquiryForm/>
+        <PickAPet/>
     </div>
   )
 }

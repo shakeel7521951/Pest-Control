@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from 'next/link'
 import {
   FaPaw,
   FaShieldAlt,
@@ -7,20 +8,23 @@ import {
   FaCalendarAlt,
   FaStar,
 } from "react-icons/fa";
+import { CgPlayTrackNextR } from "react-icons/cg";
 
 const PetControl = () => {
   const [selectedPet, setSelectedPet] = useState("");
 
-  const petOptions = [
-    { value: "", label: "Select your pet" },
-    { value: "dog", label: "Dog" },
-    { value: "cat", label: "Cat" },
-    { value: "bird", label: "Bird" },
-    { value: "rabbit", label: "Rabbit" },
-    { value: "hamster", label: "Hamster" },
-    { value: "fish", label: "Fish" },
-    { value: "turtle", label: "Turtle" },
-  ];
+ const petOptions = [
+  { value: "", label: "Select your pet" },
+  { value: "Rodents", label: "Rodents", link: "/hoverbird/rodent" },
+  { value: "Cockroach", label: "Cockroach", link: "/hoverbird/cockraches" },
+  { value: "Fleas", label: "Fleas", link: "/hoverbird/fleas" },
+  { value: "Bed Bugs", label: "Bed Bugs", link: "/hoverbird/bedbugs" },
+  { value: "Wasps", label: "Wasps", link: "/hoverbird/wasps" },
+  { value: "Pigeon", label: "Pigeon", link: "/hoverbird/pigeon" },
+  { value: "Honeybee", label: "Honeybee", link: "/hoverbird/honeybee" },
+  { value: "Moths", label: "Moths", link: "/hoverbird/moth" },
+  { value: "Fox", label: "Fox", link: "/hoverbird/fox" }
+];
 
   const serviceQualities = [
     {
@@ -112,15 +116,20 @@ const PetControl = () => {
               </div>
 
               {selectedPet && (
-                <div className="mt-6 p-4 bg-[#7BAE4B1A] rounded-lg border border-[#7BAE4B] border-opacity-30">
-                  <p className=" font-medium text-[#1B2A41]">
-                    Great choice! We have special services for your{" "}
-                    {petOptions
+           <Link href={petOptions.find((p) => p.value === selectedPet)?.link || "#"}>
+                <div className="mt-6 p-4 bg-[#7BAE4B1A] cursor-pointer rounded-lg border hover:shadow-md transition border-[#7BAE4B] border-opacity-30">
+                  <p className=" font-medium flex flex-col xl:flex-row items-center gap-3 text-[#1B2A41]">
+                    <span className="xl:whitespace-nowrap">Great choice! We have special services for your{" "}</span>
+                 <p className="flex items-center gap-3 uppercase">
+                    <span className="underline text-green-600"> {petOptions
                       .find((p) => p.value === selectedPet)
-                      ?.label.toLowerCase()}
-                    .
+                      ?.label.toLowerCase()}</span>
+                    <span><CgPlayTrackNextR className="text-xl text-green-800" /></span>
+                 </p>
+
                   </p>
                 </div>
+           </Link>
               )}
             </div>
           </div>

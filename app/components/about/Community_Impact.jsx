@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from "next/link"
 const Community_Impact = () => {
   const stats = [
     {
@@ -59,18 +59,18 @@ const Community_Impact = () => {
 
         {/* CTA button */}
         <button className="relative overflow-hidden group bg-green-500 hover:bg-green-400 text-white font-bold px-6 py-3 sm:px-8 sm:py-3 md:px-10 md:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm sm:text-base">
-          <span className="relative z-10">Join Our Community</span>
+          <Link href="/contact"><span className="relative z-10">Join Our Community</span></Link>
           <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-500"></span>
           <span className="absolute -bottom-1 left-1/2 w-0 h-1 bg-green-500 group-hover:w-4/5 group-hover:left-1/10 transition-all duration-500"></span>
         </button>
 
         {/* Testimonial snippet */}
-        <div className="mt-8 sm:mt-12 lg:mt-16 max-w-2xl mx-auto bg-white/5 p-4 sm:p-6 rounded-lg md:rounded-xl border border-white/10">
-          <p className="text-green-200 italic mb-3 sm:mb-4 text-sm sm:text-base md:text-lg">
+        <div className="mt-8 sm:mt-12 lg:mt-16 max-w-2xl mx-auto bg-gray-300 p-4 sm:p-6 rounded-lg md:rounded-xl ">
+          <p className=" italic mb-3 sm:mb-4 text-sm sm:text-base md:text-lg">
             "Feathered Friends Care transformed our local sanctuary with their expertise and resources. 
             Their impact goes far beyond numbers."
           </p>
-          <p className="text-green-100 font-medium text-sm sm:text-base">— Maria Sanchez, Avian Sanctuary Director</p>
+          <p className="text-white font-medium text-sm sm:text-base">— Maria Sanchez, Avian Sanctuary Director</p>
         </div>
       </div>
     </section>

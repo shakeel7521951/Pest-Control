@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 
 const Hero = () => {
   return (
@@ -31,12 +32,13 @@ const Hero = () => {
                   our certified avian specialists provide expert care for all bird species.
                 </p>
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
-                  <button className="px-6 py-3 bg-gradient-to-r from-green-500 to-[#7BAE4B] text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform">
+                <Link href="/contact">  <button className="px-6 py-3 bg-gradient-to-r from-green-500 to-[#7BAE4B] text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform">
                     Book a Consultation
-                  </button>
+                  </button></Link>
+                 <Link href="/about">
                   <button className="px-6 py-3 bg-white text-[#7BAE4B] font-medium rounded-full border-2 border-[#7BAE4B] shadow-md hover:bg-green-50 transition-all duration-300">
                     Learn More
-                  </button>
+                  </button></Link>
                 </div>
               </div>
             </div>

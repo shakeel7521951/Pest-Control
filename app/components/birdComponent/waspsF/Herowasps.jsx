@@ -1,141 +1,99 @@
 'use client';
 import React, { useState } from "react";
-import { FaGraduationCap } from "react-icons/fa";
 import { GoPlus } from "react-icons/go";
-import { FaWpforms } from "react-icons/fa6";
-import { BsFillTelephoneFill, BsTelephone } from "react-icons/bs";
-import { MdOutlineStart } from "react-icons/md";
 import { FiMinus } from "react-icons/fi";
+import { MdOutlineStart } from "react-icons/md";
+import { BsFillTelephoneFill, BsTelephone } from "react-icons/bs";
+import { FaBug } from "react-icons/fa6";
 
-const WaspAppearance = [
-  "Body length: 10–20mm depending on species.",
-  "Black and yellow striped abdomen (warning coloration).",
-  "Narrow waist separating thorax and abdomen.",
-  "Two pairs of wings, with hindwings smaller.",
-  "Antennae are straight and clearly visible."
-];
-
-const WaspLifecycle = [
-  "Queens emerge in spring and build nests from chewed wood pulp.",
-  "Eggs hatch in a few days, larvae are fed by the queen.",
-  "Larvae pupate after ~2 weeks, becoming adult wasps.",
-  "Lifecycle completes in 4–6 weeks, depending on temperature.",
-  "Colonies die in autumn, only new queens survive winter."
-];
-
-const WaspBehaviour = [
-  "Highly social insects living in colonies with a queen, workers, and drones.",
-  "Become aggressive in late summer as food becomes scarce.",
-  "Feed on nectar, sweet foods, and other insects.",
-  "Can sting multiple times, unlike bees.",
-  "Build nests in attics, wall cavities, sheds, and underground."
-];
+const WaspDetails = {
+  Identification: [
+    "Typically 10–20mm in size, species may vary.",
+    "Bold black and yellow body patterns.",
+    "Thin midsection connecting thorax and abdomen.",
+    "Transparent wings folded along the back.",
+    "Long antennae with noticeable motion."
+  ],
+  NestingCycle: [
+    "Queens wake from hibernation in early spring.",
+    "Paper-like nests built using wood fibers and saliva.",
+    "Eggs are laid and larvae hatch within days.",
+    "Adults emerge within a few weeks, increasing colony size.",
+    "Only new queens survive after autumn."
+  ],
+  CommonHabits: [
+    "Social insects often nesting in sheltered areas.",
+    "Increased activity in late summer due to sugar craving.",
+    "Sting repeatedly when threatened.",
+    "Predators of smaller insects but also attracted to sweet foods.",
+    "Nests found in sheds, lofts, trees, or wall voids."
+  ]
+};
 
 const Herowasps = () => {
-  const [mouse, setMouse] = useState(false);
-  const [rat, setRat] = useState(false);
+  const [expandedSection, setExpandedSection] = useState(null);
 
-  const toggleMouse = () => {
-    setMouse(!mouse);
-    if (rat) setRat(false);
-  };
-
-  const toggleRat = () => {
-    setRat(!rat);
-    if (mouse) setMouse(false);
+  const toggleSection = (sectionName) => {
+    setExpandedSection(expandedSection === sectionName ? null : sectionName);
   };
 
   return (
-    <div className="p-5 sm:px-20 flex gap-5 py-10">
-      <div className="w-full">
-        <h1 className="text-3xl mb-2 font-semibold text-green-400">
-          Wasp Problems? We Can Help.
-        </h1>
-        <p className="text-sm">
-          Ark provides expert wasp control services across London, the Midlands, and Northern regions. Get rid of wasp infestations quickly and effectively.
-        </p>
+    <div className="px-6 sm:px-20 py-12 bg-gray-50">
+      <h1 className="text-3xl text-green-500 font-bold mb-3">Expert Wasp Removal Services</h1>
+      <p className="text-sm mb-6 max-w-3xl">
+        Dealing with an aggressive wasp nest? Our trained specialists are equipped to handle infestations safely and efficiently. Covering London, the Midlands, and Northern UK.
+      </p>
 
-        <div className="flex flex-col sm:flex-row justify-between gap-10 items-center p-5 sm:py-10">
-          <div className="w-full sm:w-1/2 h-80">
-            <img
-              src="/Navbar/wasps.jpg"
-              className="w-full h-full object-cover rounded-xl"
-              alt="wasps"
-            />
-          </div>
-          <div className="w-full sm:w-1/2 flex flex-col gap-3 text-xl font-semibold border-2 bg-green-500 text-white p-5 rounded-r-4xl">
-            <h1 className="flex items-center gap-5">
-              <BsFillTelephoneFill />
-              <p>Freephone: 0800 0279 273</p>
-            </h1>
-            <h1 className="flex items-center gap-5">
-              <BsTelephone />
-              <p>Local Rate: 01689 834 465</p>
-            </h1>
-          </div>
-        </div>
-
-        <div className="w-full mt-5 sm:mt-2 flex flex-col md:flex-row gap-5">
-          <div
-            className={`border border-green-500 w-full  ${
-              rat ? "h-0" : "h-auto"
-            }`}
-          >
-            <div
-              className="flex justify-between items-center gap-5 text-white px-3 py-2 bg-green-600 cursor-pointer"
-              onClick={toggleMouse}
-            >
-              <div className="flex items-center gap-2">
-                <FaGraduationCap className="text-3xl" />
-                <p className="text-md md:text-xs lg:text-lg font-semibold">
-                  Wasps - Learn More
-                </p>
+      <div className="flex flex-col-reverse lg:flex-row gap-10 items-start">
+        {/* Left: Accordion */}
+        <div className="w-full lg:w-2/3 flex flex-col gap-4">
+          {Object.entries(WaspDetails).map(([title, items]) => (
+            <div key={title} className="border border-green-400 rounded-lg overflow-hidden">
+              <div
+                className="flex justify-between items-center bg-green-600 text-white px-4 py-3 cursor-pointer"
+                onClick={() => toggleSection(title)}
+              >
+                <div className="flex items-center gap-3">
+                  <FaBug />
+                  <h2 className="font-semibold text-lg">{title.replace(/([A-Z])/g, ' $1').trim()}</h2>
+                </div>
+                {expandedSection === title ? <FiMinus /> : <GoPlus />}
               </div>
-              {mouse ? (
-                <FiMinus className="text-xl" />
-              ) : (
-                <GoPlus className="text-xl" />
+              {expandedSection === title && (
+                <ul className="p-4 bg-white text-sm space-y-2">
+                  {items.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <MdOutlineStart className="text-green-600 mt-1" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               )}
             </div>
-            {mouse && (
-              <div className="p-2 flex flex-col">
-                <div className="my-3">
-                  <h1 className="font-semibold mb-5">Appearance</h1>
-                  <ul className="flex flex-col text-sm gap-3">
-                    {WaspAppearance.map((item, index) => (
-                      <li key={index} className="flex gap-2 items-center my-1">
-                        <MdOutlineStart />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+          ))}
+        </div>
 
-                <div className="my-3">
-                  <h1 className="font-semibold mb-5">Lifecycle</h1>
-                  <ul className="flex flex-col text-sm gap-3">
-                    {WaspLifecycle.map((item, index) => (
-                      <li key={index} className="flex gap-2 items-center my-1">
-                        <MdOutlineStart />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="my-3">
-                  <h1 className="font-semibold mb-5">Behaviour</h1>
-                  <ul className="flex flex-col text-sm gap-3">
-                    {WaspBehaviour.map((item, index) => (
-                      <li key={index} className="flex gap-2 items-center my-1">
-                        <MdOutlineStart />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
+        {/* Right: Image and Call Box */}
+        <div className="w-full lg:w-1/3 space-y-6">
+          <div className="h-72 w-full rounded-xl overflow-hidden">
+            <img
+              src="/Navbar/wasps.jpg"
+              alt="Wasp Control"
+              className="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+          <div className="bg-green-500 text-white p-6 rounded-xl shadow-lg space-y-3 text-lg font-semibold">
+            <div className="flex items-center gap-3">
+              <BsFillTelephoneFill />
+              <span>Freephone: 0800 0279 273</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <BsTelephone />
+              <span>Local Rate: 01689 834 465</span>
+            </div>
+            <p className="text-sm mt-2">
+              Speak to our pest control experts today and eliminate your wasp problem fast.
+            </p>
           </div>
         </div>
       </div>

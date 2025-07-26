@@ -1,148 +1,133 @@
 'use client';
 import React, { useState } from "react";
-import { FaGraduationCap } from "react-icons/fa";
-import { GoPlus } from "react-icons/go";
-import { FaWpforms } from "react-icons/fa6";
+import { FaDove } from "react-icons/fa";
 import { BsFillTelephoneFill, BsTelephone } from "react-icons/bs";
-import { MdOutlineStart } from "react-icons/md";
+import { GoPlus } from "react-icons/go";
 import { FiMinus } from "react-icons/fi";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
-// Correct pigeon data arrays
-const PigeonAppearance = [
-  "Length: 29–33cm.",
-  "Weight: 260–580g.",
-  "Grey, slightly iridescent neck feathers that shine pink and green in sunlight.",
-  "Color variants include white, brownish-red, and mixtures."
-];
-
-const PigeonLifecycle = [
-  "Can produce up to 9 broods per year, typically 2–3 on average.",
-  "Each clutch contains 2 eggs; new eggs laid when chicks are 20 days old.",
-  "Egg incubation lasts 17–19 days.",
-  "Chicks remain in the nest for 35–37 days.",
-  "Lifespan: 3–5 years in the wild, up to 35 years in captivity."
-];
-
-const PigeonBehaviour = [
-  "Female pigeons build nests using materials gathered by males.",
-  "Often roost in urban structures like ledges, lofts, and statues.",
-  "Feed on seeds, bread, vegetables, meat, and food waste.",
-  "Drink by dipping bills in water and sipping without lifting heads.",
-  "Young pigeons (squabs) are fed pigeon milk produced in the crop.",
-  "When startled, pigeons take flight with loud clapping to alert others.",
-  "Capable of rapid flight maneuvers at speeds up to 50mph.",
-  "Non-migratory and remain resident year-round.",
-  "Avoid feeding pigeons near buildings to prevent nesting.",
-  "Acidic droppings damage structures and pose health risks (e.g., Psittacosis)."
+const pigeonDetails = [
+  {
+    title: "Appearance",
+    items: [
+      "Length ranges between 29–33cm.",
+      "Weight varies from 260–580g.",
+      "Grey body with shimmering neck feathers.",
+      "Various color mutations including white and brown."
+    ]
+  },
+  {
+    title: "Lifecycle",
+    items: [
+      "Capable of producing 9 broods a year.",
+      "Clutches typically have 2 eggs.",
+      "Incubation lasts around 17–19 days.",
+      "Chicks stay in the nest for 35–37 days.",
+      "Lifespan can reach 35 years in captivity."
+    ]
+  },
+  {
+    title: "Behaviour",
+    items: [
+      "Nests built by females using male-gathered materials.",
+      "Often found roosting on buildings and statues.",
+      "Consume seeds, scraps, and even meat.",
+      "Drink by suction without lifting heads.",
+      "Produce crop milk for young squabs.",
+      "Fly with loud wing claps when alarmed.",
+      "Can reach flying speeds of 50mph.",
+      "Droppings are acidic and cause damage.",
+      "May spread diseases like Psittacosis."
+    ]
+  }
 ];
 
 const Heropigeons = () => {
-  const [mouse, setMouse] = useState(false);
-  const [rat, setRat] = useState(false);
-
-  const toggleMouse = () => {
-    setMouse(!mouse);
-    if (rat) setRat(false);
-  };
-
-  const toggleRat = () => {
-    setRat(!rat);
-    if (mouse) setMouse(false);
+  const [activeSection, setActiveSection] = useState(null);
+  const toggleSection = (index) => {
+    setActiveSection(activeSection === index ? null : index);
   };
 
   return (
-    <div className="p-5 sm:px-20 flex gap-5 py-10">
-      <div className="w-full">
-        <h1 className="text-3xl mb-2 font-semibold text-green-400">
-          Trouble with Pigeons?
-        </h1>
-        <p className="text-sm">
-          Ark provide pest control solutions to pigeon infestations in London, the South East, the North West, the North and the Midlands.
-        </p>
-
-        <div className="flex flex-col sm:flex-row justify-between gap-10 items-center p-5 sm:py-10">
-          <div className="w-full sm:w-1/4 h-70">
-            <img
-              src="/Navbar/pigeons.png"
-              className="w-full h-full object-cover rounded-xl"
-              alt="pigeons"
-            />
-          </div>
-          <div className="w-full sm:w-1/2 flex flex-col gap-3 text-xl font-semibold border-2 bg-green-500 text-white p-5 rounded-r-4xl">
-            <h1 className="flex items-center gap-5">
-              <BsFillTelephoneFill />
-              <p>Freephone: 0800 0279 273</p>
-            </h1>
-            <h1 className="flex items-center gap-5">
-              <BsTelephone />
-              <p>Local Rate: 01689 834 465</p>
-            </h1>
-          </div>
+    <section className="bg-white py-16 px-4 sm:px-10">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <h1 className="text-4xl md:text-5xl font-bold text-green-700 flex items-center justify-center gap-3">
+            <FaDove className="text-4xl" />
+            Pigeon Control Services
+          </h1>
+          <p className="text-gray-600 mt-4 text-lg">
+            Professional pigeon management in London, the Midlands, the North & beyond.
+          </p>
         </div>
 
-        <div className="w-full mt-5 sm:mt-2 flex flex-col md:flex-row gap-5">
-          {/* Pigeon Info Card */}
-          <div className={`border border-green-500 w-full ${rat ? "h-0" : "h-auto"}`}>
-            <div
-              className="flex justify-between items-center gap-5 text-white px-3 py-2 bg-green-600 cursor-pointer"
-              onClick={toggleMouse}
-            >
-              <div className="flex items-center gap-2">
-                <FaGraduationCap className="text-3xl" />
-                <p className="text-md md:text-xs lg:text-lg font-semibold">
-                  Pigeons - Learn More
-                </p>
-              </div>
-              {mouse ? (
-                <FiMinus className="text-xl" />
-              ) : (
-                <GoPlus className="text-xl" />
-              )}
+        {/* Main content grid */}
+        <div className="grid md:grid-cols-2 gap-10 items-start">
+          {/* Image + Contact */}
+          <div className="flex flex-col gap-8">
+            {/* Pigeon Image */}
+            <div className="w-full h-[300px] rounded-xl overflow-hidden border border-gray-200 shadow-md">
+              <img
+                src="/Navbar/pigeons2.webp"
+                alt="Pigeon Control"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
 
-            {mouse && (
-              <div className="p-2 flex flex-col">
-                <div className="my-3">
-                  <h1 className="font-semibold mb-5">Appearance</h1>
-                  <ul className="flex flex-col text-sm gap-3">
-                    {PigeonAppearance.map((item, index) => (
-                      <li key={index} className="flex gap-2 items-center my-1">
-                        <MdOutlineStart />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+            {/* Contact Card */}
+            <div className="bg-green-50 border border-green-200 rounded-xl shadow-lg p-6">
+              <h3 className="text-2xl font-semibold text-green-700 mb-4">Talk to an Expert</h3>
+              <div className="space-y-4 text-gray-800 text-base">
+                <div className="flex items-center gap-3">
+                  <BsFillTelephoneFill className="text-green-600" />
+                  <span>Freephone: <strong>0800 0279 273</strong></span>
                 </div>
-
-                <div className="my-3">
-                  <h1 className="font-semibold mb-5">Lifecycle</h1>
-                  <ul className="flex flex-col text-sm gap-3">
-                    {PigeonLifecycle.map((item, index) => (
-                      <li key={index} className="flex gap-2 items-center my-1">
-                        <MdOutlineStart />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="my-3">
-                  <h1 className="font-semibold mb-5">Behaviour</h1>
-                  <ul className="flex flex-col text-sm gap-3">
-                    {PigeonBehaviour.map((item, index) => (
-                      <li key={index} className="flex gap-2 items-center my-1">
-                        <MdOutlineStart />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="flex items-center gap-3">
+                  <BsTelephone className="text-green-600" />
+                  <span>Local Rate: <strong>01689 834 465</strong></span>
                 </div>
               </div>
-            )}
+            </div>
+          </div>
+
+          {/* Accordion */}
+          <div className="space-y-6">
+            {pigeonDetails.map((section, index) => (
+              <div
+                key={index}
+                className="rounded-xl border border-gray-200 shadow-md"
+              >
+                <button
+                  onClick={() => toggleSection(index)}
+                  className="w-full flex justify-between items-center px-6 py-4 bg-green-100 hover:bg-green-200 transition duration-200 font-medium text-lg text-green-800"
+                >
+                  <div className="flex items-center gap-2">
+                    <MdOutlineKeyboardArrowRight className="text-2xl" />
+                    {section.title}
+                  </div>
+                  {activeSection === index ? (
+                    <FiMinus className="text-xl" />
+                  ) : (
+                    <GoPlus className="text-xl" />
+                  )}
+                </button>
+                {activeSection === index && (
+                  <ul className="px-6 py-4 text-gray-700 space-y-2 text-base bg-white">
+                    {section.items.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="text-green-600 mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

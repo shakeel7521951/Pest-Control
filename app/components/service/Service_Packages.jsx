@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link'
 const Service_Packages = () => {
   return (
     <section className="mb-14 px-4 sm:px-6 lg:px-16 py-12">
@@ -77,9 +77,9 @@ const Service_Packages = () => {
                   </li>
                 ))}
               </ul>
-              <button className="w-full bg-[#7BAE4B] hover:bg-green-600 text-white py-2 rounded-lg transition duration-300">
+          <Link href="/contact">    <button className="w-full bg-[#7BAE4B] hover:bg-green-600 text-white py-2 rounded-lg transition duration-300">
                 Packages
-              </button>
+              </button></Link>
             </div>
           </div>
         ))}

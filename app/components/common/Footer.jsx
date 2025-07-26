@@ -25,12 +25,12 @@ const Footer = () => {
       <div>
         <h2 className="font-bold text-lg mb-4">Services</h2>
         <ul className="space-y-2 text-sm text-gray-300">
-          <Link href="/pest-control"><li className="cursor-pointer hover:text-white transition">Pest Control</li></Link>
-          <Link href="/termite"><li className="cursor-pointer hover:text-white transition">Termite Control</li></Link>
-          <Link href="/rodent"><li className="cursor-pointer hover:text-white transition">Rodent Control</li></Link>
-          <Link href="/fumigation"><li className="cursor-pointer hover:text-white transition">Fumigation</li></Link>
-          <Link href="/residential"><li className="cursor-pointer hover:text-white transition">Residential</li></Link>
-          <Link href="/commercial"><li className="cursor-pointer hover:text-white transition">Commercial</li></Link>
+          <Link href="/"><li className="cursor-pointer hover:text-white transition">Pest Control</li></Link>
+          <Link href="/"><li className="cursor-pointer hover:text-white transition">Termite Control</li></Link>
+          <Link href="/hoverbird/rodent"><li className="cursor-pointer hover:text-white transition">Rodent Control</li></Link>
+          <Link href="/"><li className="cursor-pointer hover:text-white transition">Fumigation</li></Link>
+          <Link href="/"><li className="cursor-pointer hover:text-white transition">Residential</li></Link>
+          <Link href="/"><li className="cursor-pointer hover:text-white transition">Commercial</li></Link>
         </ul>
       </div>
 
@@ -39,8 +39,8 @@ const Footer = () => {
         <h2 className="font-bold text-lg mb-4">Company</h2>
         <ul className="space-y-2 text-sm text-gray-300">
           <Link href="/about"><li className="cursor-pointer hover:text-white transition">About Us</li></Link>
-          <Link href="/careers"><li className="cursor-pointer hover:text-white transition">Careers</li></Link>
-          <Link href="/blog"><li className="cursor-pointer hover:text-white transition">Blog</li></Link>
+          <Link href="/"><li className="cursor-pointer hover:text-white transition">Careers</li></Link>
+          <Link href="/blogs"><li className="cursor-pointer hover:text-white transition">Blog</li></Link>
           <Link href="/faq"><li className="cursor-pointer hover:text-white transition">FAQs</li></Link>
           <Link href="/terms"><li className="cursor-pointer hover:text-white transition">Terms</li></Link>
           <Link href="/privacy"><li className="cursor-pointer hover:text-white transition">Privacy Policy</li></Link>
@@ -51,12 +51,12 @@ const Footer = () => {
       <div>
         <h2 className="font-bold text-lg mb-4">More Services</h2>
         <ul className="space-y-2 text-sm text-gray-300">
-          <Link href="/ants"><li className="cursor-pointer hover:text-white transition">Ant Control</li></Link>
-          <Link href="/bed-bugs"><li className="cursor-pointer hover:text-white transition">Bed Bugs</li></Link>
-          <Link href="/bees-wasps"><li className="cursor-pointer hover:text-white transition">Bees & Wasps</li></Link>
-          <Link href="/spiders"><li className="cursor-pointer hover:text-white transition">Spiders</li></Link>
-          <Link href="/flies"><li className="cursor-pointer hover:text-white transition">Flies</li></Link>
-          <Link href="/mosquitoes"><li className="cursor-pointer hover:text-white transition">Mosquitoes</li></Link>
+          <Link href="/hoverbird/moth"><li className="cursor-pointer hover:text-white transition">Ant Control</li></Link>
+          <Link href="/hoverbird/bedbugs"><li className="cursor-pointer hover:text-white transition">Bed Bugs</li></Link>
+          <Link href="/hoverbird/wasps"><li className="cursor-pointer hover:text-white transition">Bees & Wasps</li></Link>
+          <Link href="/"><li className="cursor-pointer hover:text-white transition">Spiders</li></Link>
+          <Link href="/hoverbird/fleas"><li className="cursor-pointer hover:text-white transition">Flies</li></Link>
+          <Link href="/hoverbird/honeybee"><li className="cursor-pointer hover:text-white transition">Mosquitoes</li></Link>
         </ul>
       </div>
 
@@ -84,9 +84,9 @@ const Footer = () => {
           </ul>
         </div>
         <div className="flex justify-center gap-2 md:mr-10">
-          <Link href=""><div className="p-1 rounded-full hover:border-gray-300 border-2"><FaFacebook className='text-xl cursor-pointer' /></div></Link>
-          <Link href=""><div className="p-1 rounded-full hover:border-gray-300 border-2"><TbBrandWhatsappFilled  className='text-xl cursor-pointer' /></div></Link>
-          <Link href=""><div className="p-1 rounded-full hover:border-gray-300 border-2"><FaInstagramSquare className='text-xl cursor-pointer' /></div></Link>
+          <Link href="https://www.facebook.com/"><div className="p-1 rounded-full hover:border-gray-300 border-2"><FaFacebook className='text-xl cursor-pointer' /></div></Link>
+          <Link href="https://web.whatsapp.com/"><div className="p-1 rounded-full hover:border-gray-300 border-2"><TbBrandWhatsappFilled  className='text-xl cursor-pointer' /></div></Link>
+          <Link href="https://www.instagram.com/"><div className="p-1 rounded-full hover:border-gray-300 border-2"><FaInstagramSquare className='text-xl cursor-pointer' /></div></Link>
           
         </div>
       </div>
