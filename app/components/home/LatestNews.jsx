@@ -2,10 +2,30 @@
 import blogs from "@/app/lib/blogs";
 import Image from "next/image";
 import Link from "next/link";
-import { FaCalendarAlt, FaUser } from "react-icons/fa";
+import { useState } from "react";
+import { FaCalendarAlt, FaRegThumbsUp, FaUser } from "react-icons/fa";
 
 const LatestNews = () => {
- 
+
+  const [articleLikes, setArticleLikes] = useState(
+    blogs.reduce((acc, article) => {
+      acc[article.id] = { count: article.likes, liked: false };
+      return acc;
+    }, {})
+  );
+
+  const handleLike = (articleId) => {
+    setArticleLikes(prev => ({
+      ...prev,
+      [articleId]: {
+        count: prev[articleId].liked ? prev[articleId].count - 1 : prev[articleId].count + 1,
+        liked: !prev[articleId].liked
+      }
+    }));
+  };
+
+
+
 
   return (
     <section className="py-16 px-4 bg-[#f9f9f9]">
@@ -39,15 +59,29 @@ const LatestNews = () => {
               </div>
 
               <div className="p-4 pt-2">
-                <div className="flex items-center text-sm text-gray-500 mb-1">
-                  <span className="flex items-center mr-4">
-                    <FaCalendarAlt className="mr-1 text-[#7BAE4B]" />
-                    {article.date}
-                  </span>
-                  <span className="flex items-center">
-                    <FaUser className="mr-1 text-[#7BAE4B]" />
-                    {article.author}
-                  </span>
+                <div className="flex items-center justify-between text-sm text-gray-500 mb-1">
+                  <div className="flex">
+                    <span className="flex items-center mr-4">
+                      <FaCalendarAlt className="mr-1 text-[#7BAE4B]" />
+                      {article.date}
+                    </span>
+                    <span className="flex items-center">
+                      <FaUser className="mr-1 text-[#7BAE4B]" />
+                      {article.author}
+                    </span>
+                  </div>
+                  <div>
+                    <button
+                      onClick={() => handleLike(article.id)}
+                      className="flex items-center gap-1 font-semibold text-gray-600"
+                    >
+                      <FaRegThumbsUp
+                        className={`transition-colors duration-200 cursor-pointer text-lg ${articleLikes[article.id]?.liked ? "text-[#7BAE4B]" : "text-gray-400"
+                          }`}
+                      />
+                      {articleLikes[article.id]?.count || 0}
+                    </button>
+                  </div>
                 </div>
 
                 <h3 className="text-xl font-bold text-[#1E2A38] mb-3 hover:text-[#7BAE4B] transition-colors duration-200">

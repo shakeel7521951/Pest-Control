@@ -5,6 +5,7 @@ const blogs = [
     title: "5 Essential Summer Grooming Tips for Your Dog",
     date: "June 15, 2023",
     author: "Dr. Sarah Johnson",
+    likes: 76,
     image: "/home/news.jpg",
     category: "Grooming",
     content: `
@@ -18,6 +19,26 @@ const blogs = [
 
       Regular grooming not only ensures your dog looks great but also prevents many health issues. Stay consistent and consult a vet for breed-specific grooming tips.
     `,
+    reviews: [
+      {
+        id: 1,
+        date: "May 15, 2023",
+        comment: "This article was extremely helpful for my golden retriever's summer care!",
+        likes: 5,
+      },
+      {
+        id: 2,
+        date: "April 28, 2023",
+        comment: "Great tips, especially about not shaving double-coated breeds.",
+        likes: 3,
+      },
+      {
+        id: 3,
+        date: "June 2, 2023",
+        comment: "I've been following these grooming tips and my dog looks and feels much better!",
+        likes: 4,
+      },
+    ],
   },
   {
     id: "2",
@@ -25,6 +46,7 @@ const blogs = [
     title: "The Ultimate Guide to Pet Nutrition in 2023",
     date: "May 28, 2023",
     author: "Dr. Michael Chen",
+    likes: 637,
     image: "/home/news (1).jpg",
     category: "Health",
     content: `
@@ -37,6 +59,20 @@ const blogs = [
 
       Give your furry friend the diet they deserve in 2023!
     `,
+    reviews: [
+      {
+        id: 1,
+        date: "May 29, 2023",
+        comment: "Really informative, I finally understand what to feed my aging Labrador!",
+        likes: 6,
+      },
+      {
+        id: 2,
+        date: "May 30, 2023",
+        comment: "The label-reading tip was eye-opening.",
+        likes: 2,
+      },
+    ],
   },
   {
     id: "3",
@@ -44,6 +80,7 @@ const blogs = [
     title: "New Techniques for Training Anxious Pets",
     date: "April 10, 2023",
     author: "Amanda Rodriguez",
+    likes: 312,
     image: "/home/news (2).jpg",
     category: "Training",
     content: `
@@ -56,6 +93,20 @@ const blogs = [
 
       Help your pet feel calm and confident.
     `,
+    reviews: [
+      {
+        id: 1,
+        date: "April 12, 2023",
+        comment: "Worked wonders on my anxious cat. Thank you!",
+        likes: 3,
+      },
+      {
+        id: 2,
+        date: "April 15, 2023",
+        comment: "Very practical and easy to implement advice.",
+        likes: 4,
+      },
+    ],
   },
   {
     id: "4",
@@ -63,6 +114,7 @@ const blogs = [
     title: "Top 5 Summer Toys Every Dog Will Love",
     date: "July 2, 2023",
     author: "Lindsay Marks",
+    likes: 102,
     image: "/home/news.jpg",
     category: "Grooming",
     content: `
@@ -76,6 +128,14 @@ const blogs = [
 
       Make summer playtime safe and exciting!
     `,
+    reviews: [
+      {
+        id: 1,
+        date: "July 3, 2023",
+        comment: "I bought 3 of these toys already!",
+        likes: 1,
+      },
+    ],
   },
   {
     id: "5",
@@ -83,6 +143,7 @@ const blogs = [
     title: "How to Keep Your Pet’s Teeth Healthy",
     date: "March 14, 2023",
     author: "Dr. Priya Kumar",
+    likes: 342,
     image: "/home/news (1).jpg",
     category: "Health",
     content: `
@@ -95,6 +156,14 @@ const blogs = [
 
       A clean mouth means a healthier pet!
     `,
+    reviews: [
+      {
+        id: 1,
+        date: "March 15, 2023",
+        comment: "My dog had bleeding gums, and this helped so much.",
+        likes: 4,
+      },
+    ],
   },
   {
     id: "6",
@@ -102,6 +171,7 @@ const blogs = [
     title: "Clicker Training: A Positive Approach",
     date: "February 1, 2023",
     author: "Jake Thompson",
+    likes: 3,
     image: "/home/news (2).jpg",
     category: "Training",
     content: `
@@ -113,6 +183,14 @@ const blogs = [
 
       Start building great behavior today!
     `,
+    reviews: [
+      {
+        id: 1,
+        date: "February 3, 2023",
+        comment: "I just ordered a clicker after reading this.",
+        likes: 2,
+      },
+    ],
   },
   {
     id: "7",
@@ -120,6 +198,7 @@ const blogs = [
     title: "The Best Grooming Tools for Every Dog Breed",
     date: "January 22, 2023",
     author: "Emily Nguyen",
+    likes: 634,
     image: "/home/news.jpg",
     category: "Grooming",
     content: `
@@ -132,6 +211,14 @@ const blogs = [
 
       Groom smart and keep tails wagging!
     `,
+    reviews: [
+      {
+        id: 1,
+        date: "January 23, 2023",
+        comment: "Perfect breakdown of grooming tool options!",
+        likes: 3,
+      },
+    ],
   },
   {
     id: "8",
@@ -139,6 +226,7 @@ const blogs = [
     title: "Hydration Tips to Beat the Summer Heat",
     date: "June 5, 2023",
     author: "Dr. Alex Stone",
+    likes: 123,
     image: "/home/news (1).jpg",
     category: "Health",
     content: `
@@ -151,6 +239,14 @@ const blogs = [
 
       Keep your companion cool and refreshed!
     `,
+    reviews: [
+      {
+        id: 1,
+        date: "June 6, 2023",
+        comment: "Hydration tips saved my pup during heatwave.",
+        likes: 2,
+      },
+    ],
   },
   {
     id: "9",
@@ -158,6 +254,7 @@ const blogs = [
     title: "Leash Training Secrets for a Calm Walk",
     date: "May 9, 2023",
     author: "Nina Patel",
+    likes: 183,
     image: "/home/news (2).jpg",
     category: "Training",
     content: `
@@ -170,6 +267,14 @@ const blogs = [
 
       Walking your dog should be fun, not frustrating.
     `,
+    reviews: [
+      {
+        id: 1,
+        date: "May 10, 2023",
+        comment: "The 'heel' command technique really worked!",
+        likes: 3,
+      },
+    ],
   },
 ];
 

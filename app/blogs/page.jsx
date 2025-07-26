@@ -2,27 +2,38 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { FaSearch, FaCalendarAlt, FaUser } from "react-icons/fa";
+import { FaSearch, FaCalendarAlt, FaUser, FaRegThumbsUp } from "react-icons/fa";
 import blogs from "../lib/blogs";
-
-
-
 
 export default function Blogs() {
     const [search, setSearch] = useState("");
-
-    const filteredBlogs = blogs.filter((blog) =>
-        blog.title.toLowerCase().includes(search.toLowerCase())
-    );
+    const [selectedCategory, setSelectedCategory] = useState("All");
+    const [likedBlogs, setLikedBlogs] = useState({}); // Track liked state per blog
 
     const categories = ["All", "Grooming", "Training", "Health"];
 
-    const [selectedCategory, setSelectedCategory] = useState("All");
+    // Filter blogs based on search and category
+    const filteredBlogs = blogs.filter((blog) =>
+        blog.title.toLowerCase().includes(search.toLowerCase())
+    );
 
     const displayedBlogs =
         selectedCategory === "All"
             ? filteredBlogs
             : filteredBlogs.filter((blog) => blog.category === selectedCategory);
+
+    // Handle like button click
+    const handleLike = (blogId) => {
+        setLikedBlogs(prev => ({
+            ...prev,
+            [blogId]: !prev[blogId] // Toggle like state
+        }));
+    };
+
+    // Calculate likes count (original + user likes)
+    const getLikeCount = (blog) => {
+        return likedBlogs[blog.id] ? blog.likes + 1 : blog.likes;
+    };
 
     return (
         <main className="min-h-screen py-10 px-4 bg-white">
@@ -124,25 +135,37 @@ export default function Blogs() {
                                     className="border rounded-xl overflow-hidden shadow hover:shadow-lg transition group"
                                 >
                                     <div className="overflow-hidden">
-
                                         <Image
                                             src={blog.image}
                                             alt={blog.title}
                                             width={800}
                                             height={400}
-                                            className="w-full h-60 object-cover transition-transform  duration-500 group-hover:scale-105 "
+                                            className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-105"
                                         />
                                     </div>
                                     <div className="p-4 pt-2">
-                                        <div className="flex items-center text-sm text-gray-500 gap-4 mb-2">
-                                            <span className="flex items-center">
-                                                <FaCalendarAlt className="mr-2 text-[#7BAE4B]" />
-                                                {blog.date}
-                                            </span>
-                                            <span className="flex items-center">
-                                                <FaUser className="mr-2 text-[#7BAE4B]" />
-                                                {blog.author}
-                                            </span>
+                                        <div className="flex items-center justify-between text-sm text-gray-500 gap-4 mb-2">
+                                            <div className="flex gap-3">
+                                                <span className="flex items-center">
+                                                    <FaCalendarAlt className="mr-2 text-[#7BAE4B]" />
+                                                    {blog.date}
+                                                </span>
+                                                <span className="flex items-center">
+                                                    <FaUser className="mr-2 text-[#7BAE4B]" />
+                                                    {blog.author}
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <button
+                                                    onClick={() => handleLike(blog.id)}
+                                                    className="flex items-center font-semibold gap-0.5"
+                                                >
+                                                    <FaRegThumbsUp
+                                                        className={`transition-colors duration-200 cursor-pointer text-lg ${likedBlogs[blog.id] ? "text-[#7BAE4B]" : "text-gray-400"}`}
+                                                    />
+                                                    {getLikeCount(blog)}
+                                                </button>
+                                            </div>
                                         </div>
                                         <h3 className="text-xl font-semibold text-gray-800 mb-2">
                                             {blog.title}
