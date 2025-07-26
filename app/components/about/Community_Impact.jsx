@@ -65,12 +65,12 @@ const Community_Impact = () => {
         </button>
 
         {/* Testimonial snippet */}
-        <div className="mt-8 sm:mt-12 lg:mt-16 max-w-2xl mx-auto bg-white/5 p-4 sm:p-6 rounded-lg md:rounded-xl border border-white/10">
-          <p className="text-green-200 italic mb-3 sm:mb-4 text-sm sm:text-base md:text-lg">
+        <div className="mt-8 sm:mt-12 lg:mt-16 max-w-2xl mx-auto bg-gray-300 p-4 sm:p-6 rounded-lg md:rounded-xl ">
+          <p className=" italic mb-3 sm:mb-4 text-sm sm:text-base md:text-lg">
             "Feathered Friends Care transformed our local sanctuary with their expertise and resources. 
             Their impact goes far beyond numbers."
           </p>
-          <p className="text-green-100 font-medium text-sm sm:text-base">— Maria Sanchez, Avian Sanctuary Director</p>
+          <p className="text-white font-medium text-sm sm:text-base">— Maria Sanchez, Avian Sanctuary Director</p>
         </div>
       </div>
     </section>

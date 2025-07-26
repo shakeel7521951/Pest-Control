@@ -44,7 +44,7 @@ const blogs = [
     title: "New Techniques for Training Anxious Pets",
     date: "April 10, 2023",
     author: "Amanda Rodriguez",
-    image: "/home/news (2).jpg",
+    image: "/home/news (3).jpg",
     category: "Training",
     content: `
       Anxious pets can be a challenge. This article outlines:
@@ -102,7 +102,7 @@ const blogs = [
     title: "Clicker Training: A Positive Approach",
     date: "February 1, 2023",
     author: "Jake Thompson",
-    image: "/home/news (2).jpg",
+    image: "/home/news (3).jpg",
     category: "Training",
     content: `
       Clicker training is a powerful and fun technique for dogs:
@@ -158,7 +158,7 @@ const blogs = [
     title: "Leash Training Secrets for a Calm Walk",
     date: "May 9, 2023",
     author: "Nina Patel",
-    image: "/home/news (2).jpg",
+    image: "/home/news (3).jpg",
     category: "Training",
     content: `
       Tired of being pulled around? Try these tips:
