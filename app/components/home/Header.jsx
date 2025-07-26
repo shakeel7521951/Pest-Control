@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaChevronDown, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
+import Link from 'next/link'
 const Header = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -93,9 +93,10 @@ const Header = () => {
                     {slide.title}
                   </h1>
                   <p className="text-lg md:text-xl mb-8">{slide.description}</p>
-                  <button className="px-8 py-3 bg-[#1B2A41] hover:bg-[#142031] text-white font-semibold rounded-full transition duration-300 hover:scale-105">
+                <Link href="/contact">
+                      <button className="px-8 py-3 bg-[#1B2A41] hover:bg-[#142031] text-white font-semibold rounded-full transition duration-300 hover:scale-105">
                     {slide.cta}
-                  </button>
+                  </button></Link>
                 </div>
               </div>
             </div>

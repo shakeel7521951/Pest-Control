@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link'
 const Hero = () => {
   return (
     <div className="relative min-h-screen">
@@ -26,12 +26,10 @@ const Hero = () => {
                   Dedicated to improving the lives of birds through proper care, nutrition, and habitat preservation. Our team of experts ensures every bird receives the love and attention they deserve.
                 </p>
                 <div className="flex flex-wrap gap-3 sm:gap-4 justify-center">
-                  <button className="px-4 py-2 sm:px-5 sm:py-3 bg-gradient-to-r from-green-500 to-[#7BAE4B] text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform text-sm sm:text-base">
+               <Link href="/">   <button className="px-4 py-2 sm:px-5 sm:py-3 bg-gradient-to-r from-green-500 to-[#7BAE4B] text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform text-sm sm:text-base">
                     Learn More
-                  </button>
-                  <button className="px-4 py-2 sm:px-5 sm:py-3 bg-white text-[#7BAE4B] font-medium rounded-full border-2 border-[#7BAE4B] shadow-md hover:bg-green-50 transition-all duration-300 text-sm sm:text-base">
-                    Contact Us
-                  </button>
+                  </button></Link>
+              
                 </div>
               </div>
             </div>

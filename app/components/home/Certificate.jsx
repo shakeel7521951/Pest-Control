@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
+import Link from "next/link";
 
 const Certificate = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -85,7 +86,7 @@ const Certificate = () => {
                 {/* Certificates Grid */}
                 <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-6 max-w-7xl mx-auto md:px-3">
                     {certificates.map((cert) => (
-                        <div
+                        <Link href=""><div
                             key={cert.id}
                             className="cursor-pointer group"
                             onClick={() => openModal(cert)}
@@ -102,7 +103,8 @@ const Certificate = () => {
                             <h3 className="mt-3 text-center font-medium text-gray-800 group-hover:text-[#7BAE4B] transition-colors">
                                 {cert.title}
                             </h3>
-                        </div>
+                        </div> 
+                        </Link>
                     ))}
                 </div>
 

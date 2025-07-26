@@ -2,8 +2,9 @@ import React from 'react'
 import Hero from '../components/birdcontrol/Hero';
 import Bird from '../components/birdcontrol/Bird';
 import WhyChos from '../components/birdcontrol/WhyChos';
-import Pesticide from '../components/birdcontrol/Pesticide';
-import InputCard from '../components/birdcontrol/InputCard';
+import PickAPet from '../components/home/PickAPet';
+
+
 
 
 const page = () => {
@@ -11,9 +12,8 @@ const page = () => {
     <div>
         <Hero/>
         <Bird/>
-        <WhyChos/>
-        <InputCard/>
-        <Pesticide/>
+        <WhyChos/>       
+        <PickAPet/>
     </div>
   )
 }

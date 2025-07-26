@@ -258,8 +258,8 @@ const Navbar = () => {
             </ul>
 
             <div className="mt-10 mb-10 text-center">
-              <Link href="#">
-                <button className="px-10 border rounded-sm font-semibold text-white bg-black hover:bg-black/60 transition py-3">
+              <Link href="/signup">
+                <button className="cursor-pointer px-10 border rounded-sm font-semibold text-white bg-black hover:bg-black/60 transition py-3">
                   Sign In
                 </button>
               </Link>
@@ -349,8 +349,8 @@ const Navbar = () => {
 
         {/* Desktop Sign In */}
         <div className="hidden lg:block">
-          <Link href="#">
-            <button className="px-10 rounded-sm font-semibold text-white bg-black hover:bg-black/60 transition py-3">
+          <Link href="/signup">
+            <button className="cursor-pointer px-10 rounded-sm font-semibold text-white bg-black hover:bg-black/60 transition py-3">
               Sign In
             </button>
           </Link>

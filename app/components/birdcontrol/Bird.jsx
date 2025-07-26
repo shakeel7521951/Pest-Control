@@ -1,85 +1,99 @@
+'use client';
 import React from "react";
-import Link from "next/link";
-import { FaMagic } from "react-icons/fa";
-
-const BirdServices = [
-  "Netting with stainless steel fixings",
-  "Bird spikes",
-  "Bird Wire system",
-  "Bird Fire Gel",
-  "Avishock Electric Deterrent (Ideal for Listed Buildings)",
-  "Trapping Program",
-  "Hawking",
-  "Audio Deterrent",
+import { FaFeatherAlt, FaCheckCircle } from "react-icons/fa";
+import { MdOutlineSupportAgent } from "react-icons/md";
+import Link from 'next/link'
+const birdSolutions = [
+  "Bird Netting with stainless steel fixings",
+  "Anti-Roost Bird Spikes",
+  "Wire Systems for ledges",
+  "Bird Fire Gel Deterrents",
+  "Electric Avishock System",
+  "Live Trapping Program",
+  "Hawking (Birds of Prey)",
+  "Audio & Ultrasonic Repellents"
 ];
 
 const Bird = () => {
   return (
-    <div className="">
-      <div className="flex flex-col ">
-        <div className="bg-white p-10 ">
-          <h1 className="text-2xl my-3 text-green-400">
-            Fully Accredited, Fully Trained.
-          </h1>
-          <p>
-            With our bird proofing solutions you can be assured you’ll never get
-            in a flap over bird problems and you have taken the most effective
-            steps towards preventing birds from inhabiting and damaging your
-            building. Bird control offers a long-term solution and when
-            installed correctly, is 100% effective.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-10 py-10 w-full items-center ">
-            <div className="sm:w-1/2">
-              <h2 className="text-2xl my-3 text-green-400 whitespace-nowrap">
-                Our Bird Control Service Includes:{" "}
-              </h2>
-              <p>
-                <ul className="flex flex-col gap-3">
-                  {BirdServices.map((item,index) => (
-                    <li key={index} className="flex gap-5 items-center">
-                      <FaMagic className="text-green-500" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </p>
-              <p className="mt-5">
-                If you are suffering with bird control problems we offer a free
-                survey and will provide advice and recommendations to help you
-                deter these nuisance birds. Our bird control experts are here to
-                help you tackle these nuisance bird with bird proofing
-                solutions, bird deterrents and also provide a guano removal
-                service.
-              </p>
-            </div>
-            <div className=" w-full sm:w-1/2 flex justify-center">
-              <div className="w-[50%]  h-50  sm:w-80 sm:h-80">
-                <img
-                  src="/Navbar/pigeons.png"
-                  className="w-full h-full bg-cover bg-center"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-          <h1 className="text-2xl my-3 text-green-400">Fast Response.</h1>
-          <p>
-            We offer a fast response service and will arrange a visit within 2
-            hours of your enquiry. There is no call out charge and all completed
-            work is guaranteed.
-          </p>
-          <h1 className="text-2xl my-3 text-green-400">Health & Safety.</h1>
-          <p>
-            At the heart of our business are the Health, Safety and Well-Being
-            of our customers and staff. We take health and safety very seriously
-            and ensure that we comply with all the current legislation. You can
-            learn more about our policies and procedures by clicking
-          </p>
-         
+    <div className="px-6 md:px-20 py-12 bg-gray-50 text-gray-800">
+      {/* Header Section */}
+      <div className="text-center mb-12">
+        <h1 className="text-3xl font-bold text-green-600">Professional Bird Control Solutions</h1>
+        <p className="mt-4 text-lg">
+          Effective, humane, and accredited bird management services across the UK.
+        </p>
+      </div>
+
+      {/* Grid Section */}
+      <div className="grid md:grid-cols-2 gap-10">
+        {/* Image */}
+        <div className="rounded-xl overflow-hidden shadow-md">
+          <img
+            src="/Navbar/pigeons2.webp"
+            alt="Bird Control"
+            className="w-full h-full object-cover"
+          />
         </div>
 
-        {/* Don't map this Data just above */}
-       
+        {/* Bird Service Info */}
+        <div className="bg-white p-6 shadow-md rounded-xl">
+          <h2 className="text-xl font-semibold text-green-500 mb-4">Why Choose Our Bird Control Services?</h2>
+          <p className="mb-4">
+            Our bird deterrent systems are tailored to protect your property from nesting,
+            damage, and contamination. We guarantee effective, long-term control using humane methods.
+          </p>
+
+          <h3 className="text-lg font-semibold mb-3 text-green-600">Solutions We Offer:</h3>
+          <ul className="space-y-3">
+            {birdSolutions.map((solution, index) => (
+              <li key={index} className="flex items-start gap-3">
+                <FaCheckCircle className="text-green-500 mt-1" />
+                <span>{solution}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Additional Info */}
+      <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
+        {/* Fast Response */}
+        <div className="bg-white p-6 rounded-xl shadow-md">
+          <h4 className="text-green-500 font-semibold text-lg mb-2">🚨 Fast Response</h4>
+          <p>
+            We respond within 2 hours of your enquiry. No call-out fees, and all work is guaranteed.
+          </p>
+        </div>
+
+        {/* Health & Safety */}
+        <div className="bg-white p-6 rounded-xl shadow-md">
+          <h4 className="text-green-500 font-semibold text-lg mb-2">🛡️ Health & Safety First</h4>
+          <p>
+            Compliant with the latest safety regulations, prioritizing the well-being of both clients and staff.
+          </p>
+        </div>
+
+        {/* Free Site Survey */}
+        <div className="bg-white p-6 rounded-xl shadow-md">
+          <h4 className="text-green-500 font-semibold text-lg mb-2">📋 Free Site Survey</h4>
+          <p>
+            Our experts offer a free survey and custom advice to eliminate bird-related issues effectively.
+          </p>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="mt-16 text-center">
+        <h2 className="text-2xl font-bold text-green-600 mb-3">
+          Book Your Free Survey Today
+        </h2>
+        <p className="text-lg mb-6">
+          Let us protect your building from unwanted bird activity. Quick, ethical, and guaranteed.
+        </p>
+    <Link href="/contact">    <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full text-lg shadow-lg transition duration-300">
+          Contact Us Now
+        </button></Link>
       </div>
     </div>
   );

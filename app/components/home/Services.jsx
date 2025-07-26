@@ -1,6 +1,6 @@
 "use client";
 import { FaBug, FaShieldAlt, FaClock, FaHome, FaLeaf } from "react-icons/fa";
-
+import Link from 'next/link'
 const Services = () => {
   const services = [
     {
@@ -89,7 +89,7 @@ const Services = () => {
               )}
 
               {/* Footer Link */}
-              <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
+              <Link href="/about"> <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
                 <a
                   href={`/services/${service.title
                     .toLowerCase()
@@ -112,7 +112,7 @@ const Services = () => {
                     />
                   </svg>
                 </a>
-              </div>
+              </div></Link>
             </div>
           ))}
 

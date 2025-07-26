@@ -1,130 +1,81 @@
 import React from "react";
 import Link from "next/link";
-import { FaMagic } from "react-icons/fa";
+import { FaTrashAlt, FaRecycle, FaPhoneAlt } from "react-icons/fa";
+import { MdLocalShipping } from "react-icons/md";
 
-const RubbishServices = [
-  "House Clearance – Furniture, TVs, fridges, freezers, books, clothes, paper, rubbish & boxes.",
-  "Office Clearance – Computers, desks, chairs, electrical goods, packaging, carpets etc.",
-  "Garden Clearance – Garden furniture, sheds, wood, cuttings, trimmings, stones, DIY rubble, BBQs.",
+const serviceItems = [
+  { icon: <FaTrashAlt />, label: "Household Waste Removal" },
+  { icon: <MdLocalShipping />, label: "Commercial Premises Clearance" },
+  { icon: <FaRecycle />, label: "Eco-Friendly Disposal Solutions" },
 ];
 
 const RubbishClean = () => {
   return (
-    <div className="min-h-screen">
-      <div className="flex flex-col">
-        <div className="bg-white p-10">
-          <h1 className="text-2xl my-3 text-green-400">
-            Bulk Waste Rubbish Removal Experts
-          </h1>
-          <p>
-            As Waste Removal experts, we’ve been clearing and removing all types
-            of rubbish for managing agents, businesses, and home owners.
-          </p>
-          <p className="mt-3">
-            Our experience and knowledge of the industry means we are ideally
-            placed to offer comprehensive and effective removal services from
-            any premises.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-10 py-10 w-full items-center">
-            <div className="sm:w-1/2">
-              <h2 className="text-2xl my-3 text-green-400 whitespace-nowrap">
-                We Provide a Range of Related Services:
-              </h2>
-              <ul className="flex flex-col gap-3">
-                {RubbishServices.map((item, index) => (
-                  <li key={index} className="flex gap-5 items-center">
-                    <FaMagic className="text-green-500" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-5">
-                Curious about the cost to clear your waste? Get an instant
-                estimate from Ark Waste Removal. <br /> *All prices quoted are
-                subject to VAT.
-              </p>
-            </div>
-            <div className="w-full sm:w-1/2 flex justify-center">
-              <div className="w-[50%] h-50 sm:w-80 sm:h-80">
-                <img
-                  src="/rubbishcln.jpg"
-                  className="w-full h-full rounded-xl bg-cover bg-center"
-                  alt="Rubbish Removal"
-                />
-              </div>
-            </div>
-          </div>
-
-          <h1 className="text-2xl my-3 text-green-400">Health & Safety</h1>
-          <p>
-            At the heart of our business are the Health, Safety and Well-Being
-            of our customers and staff. We take health and safety very seriously
-            and ensure that we comply with all the current legislation. You can
-            learn more about our policies and procedures by clicking HERE.
-          </p>
-
-          <div className="mt-15 flex">
-            <p className="p-4 text-white font-semibold text-2xl bg-green-500 rounded-xl">
-              <p>– Freephone: 0800 0279 273 –</p>
-              <p>– Local Rate: 01689 834465 –</p>
-            </p>
-          </div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <section className="bg-green-100 py-16 px-6 sm:px-20 text-center">
+        <h1 className="text-4xl font-bold text-green-700 mb-4">
+          Reliable Rubbish Clearance Services
+        </h1>
+        <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+          We provide fast, responsible, and affordable waste removal solutions across residential and commercial properties.
+        </p>
+        <div className="mt-6 text-lg font-semibold text-green-700">
+          <p>Freephone: 0800 0279 273</p>
+          <p>Local Rate: 01689 834 465</p>
         </div>
+      </section>
 
-        {/* Contact Form Section */}
-        <div className="bg-white p-10">
-          <h1 className="text-2xl my-3 text-green-400">Request a Callback</h1>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <input
-              type="text"
-              placeholder="Name*"
-              className="w-full sm:w-1/2 my-2 bg-gray-100 focus:bg-white border-gray-400 border transition rounded-sm px-2 py-3 focus:outline-none"
-            />
-            <input
-              type="email"
-              placeholder="Email*"
-              className="w-full sm:w-1/2 my-2 bg-gray-100 focus:bg-white border-gray-400 border transition rounded-sm px-2 py-3 focus:outline-none"
-            />
-          </div>
-          <div className="flex flex-col sm:flex-row w-full gap-3">
-            <input
-              type="tel"
-              placeholder="Telephone*"
-              className="w-full my-2 bg-gray-100 focus:bg-white border-gray-400 border transition rounded-sm px-2 py-3 focus:outline-none"
-            />
-            <input
-              type="text"
-              placeholder="Address / Postcode"
-              className="w-full my-2 bg-gray-100 focus:bg-white border-gray-300 border transition rounded-sm px-2 py-3 focus:outline-none"
-            />
-          </div>
-          <textarea
-            name="Message"
-            placeholder="Message"
-            className="w-full border rounded-sm focus:bg-white transition h-40 mb-5 px-2 py-2 border-gray-400 mt-5 bg-gray-100 focus:outline-none"
-          ></textarea>
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div className="flex gap-2">
-              <input type="checkbox" />
-              <p>
-                I agree to the{" "}
-                <Link className="font-semibold hover:underline" href="/">
-                  Privacy Policy
-                </Link>{" "}
-                *
-              </p>
-            </div>
-            <div className="mt-5 sm:mt-0">
-              <Link href="/">
-                <button className="px-10 rounded-sm py-2 text-xl text-white font-semibold bg-green-400 cursor-pointer hover:bg-green-300 transition">
-                  Send
-                </button>
-              </Link>
-            </div>
-          </div>
+      {/* Image + Description */}
+      <section className="flex flex-col lg:flex-row items-center gap-10 py-16 px-6 sm:px-20 bg-white">
+        <div className="w-full lg:w-1/2">
+          <img
+            src="/rubbishcln.jpg"
+            alt="Waste Clearance"
+            className="rounded-xl shadow-lg w-full h-auto object-cover"
+          />
         </div>
-      </div>
+        <div className="w-full lg:w-1/2 text-gray-700">
+          <h2 className="text-2xl font-bold text-green-600 mb-4">We Clear It All</h2>
+          <p className="mb-4">
+            Whether it's a one-off removal or regular collection, we ensure your space is left clean, safe, and clutter-free.
+            Our team is fully trained and equipped to handle everything from single items to full property clearances.
+          </p>
+          <p>
+            From bulky waste to delicate removals, our eco-conscious approach ensures over 90% of waste is recycled or reused.
+          </p>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="bg-gray-100 py-16 px-6 sm:px-20 text-center">
+        <h2 className="text-3xl font-bold text-green-600 mb-8">What We Offer</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {serviceItems.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition"
+            >
+              <div className="text-green-500 text-4xl mb-4 mx-auto">{item.icon}</div>
+              <h3 className="text-lg font-semibold">{item.label}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="bg-white py-16 px-6 sm:px-20">
+        <h2 className="text-3xl font-bold text-green-600 mb-6 text-center">Why Choose Us?</h2>
+        <ul className="list-disc list-inside text-gray-700 space-y-3 max-w-3xl mx-auto">
+          <li>Same-day service with no hidden fees</li>
+          <li>Licensed and insured waste carriers</li>
+          <li>Environmentally responsible and ethical disposal</li>
+          <li>Tailored solutions for homes, offices, and gardens</li>
+          <li>Highly rated by both domestic and business clients</li>
+        </ul>
+      </section>
+
+     
     </div>
   );
 };
