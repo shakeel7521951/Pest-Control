@@ -16,7 +16,7 @@ const PetControl = () => {
  const petOptions = [
   { value: "", label: "Select your pet" },
   { value: "Rodents", label: "Rodents", link: "/hoverbird/rodent" },
-  { value: "Cockroaches", label: "Cockroaches", link: "/hoverbird/cockraches" },
+  { value: "Cockroach", label: "Cockroach", link: "/hoverbird/cockraches" },
   { value: "Fleas", label: "Fleas", link: "/hoverbird/fleas" },
   { value: "Bed Bugs", label: "Bed Bugs", link: "/hoverbird/bedbugs" },
   { value: "Wasps", label: "Wasps", link: "/hoverbird/wasps" },
@@ -118,8 +118,8 @@ const PetControl = () => {
               {selectedPet && (
            <Link href={petOptions.find((p) => p.value === selectedPet)?.link || "#"}>
                 <div className="mt-6 p-4 bg-[#7BAE4B1A] cursor-pointer rounded-lg border hover:shadow-md transition border-[#7BAE4B] border-opacity-30">
-                  <p className=" font-medium flex items-center gap-3 text-[#1B2A41]">
-                    <span className="whitespace-nowrap">Great choice! We have special services for your{" "}</span>
+                  <p className=" font-medium flex flex-col xl:flex-row items-center gap-3 text-[#1B2A41]">
+                    <span className="xl:whitespace-nowrap">Great choice! We have special services for your{" "}</span>
                  <p className="flex items-center gap-3 uppercase">
                     <span className="underline text-green-600"> {petOptions
                       .find((p) => p.value === selectedPet)

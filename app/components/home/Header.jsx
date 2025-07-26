@@ -54,7 +54,7 @@ const Header = () => {
   return (
     <>
       <header
-        className="relative h-[80vh] w-full overflow-hidden"
+        className="relative  h-[80vh] w-full overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -94,7 +94,7 @@ const Header = () => {
                   </h1>
                   <p className="text-lg md:text-xl mb-8">{slide.description}</p>
                 <Link href="/contact">
-                      <button className="px-8 py-3 bg-[#1B2A41] hover:bg-[#142031] text-white font-semibold rounded-full transition duration-300 hover:scale-105">
+                      <button className="px-8 mb-10 py-3 bg-[#1B2A41] hover:bg-[#142031] text-white font-semibold rounded-full transition duration-300 hover:scale-105">
                     {slide.cta}
                   </button></Link>
                 </div>
@@ -106,7 +106,7 @@ const Header = () => {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className={`absolute left-20 top-1/2 -translate-y-1/2 z-10 p-4 bg-[#1B2A41cc] text-white rounded-full transition-opacity duration-300 ${
+          className={`absolute  left-20 hidden lg:block top-1/2 -translate-y-1/2 z-10 p-4 bg-[#1B2A41cc] text-white rounded-full transition-opacity duration-300 ${
             isHovered ? "opacity-100 cursor-pointer" : "opacity-0"
           } hover:bg-[#1B2A41]`}
           aria-label="Previous slide"
@@ -116,7 +116,7 @@ const Header = () => {
 
         <button
           onClick={nextSlide}
-          className={`absolute right-20 top-1/2 -translate-y-1/2 z-10 p-4 bg-[#1B2A41cc] text-white rounded-full transition-opacity duration-300 ${
+          className={`absolute right-20 hidden lg:block top-1/2 -translate-y-1/2 z-10 p-4 bg-[#1B2A41cc] text-white rounded-full transition-opacity duration-300 ${
             isHovered ? "opacity-100 cursor-pointer" : "opacity-0"
           } hover:bg-[#1B2A41]`}
           aria-label="Next slide"
